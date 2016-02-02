@@ -1,17 +1,19 @@
-Alto GitLab Repository
-===
-Project Name Here
-===
+# Alto GitLab Repository
 
-Description:
----
-Git Branches:
----
-Contributors:
----
-- Jacob Pollack (jpollac1)
-- Justin Nguyen (jnguye11)
-- Miles Gepner  (mgepner)
-- Stephen Kwan  (stephenjkwan)
+## Project Name Here
 
-[GitLab Markdown Guide](https://github.com/gitlabhq/gitlabhq/blob/master/doc/markdown/markdown.md#links)
+---
+
+### Description:
+
+### Git Branches:
+
+### Contributors:
+* :snake: Jacob Pollack (jpollac1)
+* :penguin: Justin Nguyen (jnguye11)
+* :penguin: Miles Gepner  (mgepner)
+* :penguin: Stephen Kwan  (stephenjkwan)
+
+### Other:
+* [GitLab Markdown Guide](https://github.com/gitlabhq/gitlabhq/blob/master/doc/markdown/markdown.md#links)
+* [GitLab Emojis](http://emoji.codes)
