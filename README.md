@@ -1,15 +1,13 @@
-Team 12
-===
 Alto GitLab Repository
 ===
 Project Name Here
 ===
 
-###Description:
+Description:
 ---
-###Git Branches:
+Git Branches:
 ---
-###Contributors:
+Contributors:
 ---
 - Jacob Pollack (jpollac1)
 - Justin Nguyen (jnguye11)
