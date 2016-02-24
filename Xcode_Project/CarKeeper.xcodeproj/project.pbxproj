@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE42734C1C7BF6EA006D0072 /* CarKeeper App.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE42734B1C7BF6EA006D0072 /* CarKeeper App.jpg */; };
+		AE12E1D91C7DF7950069769D /* CarKeeperIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE12E1D81C7DF7950069769D /* CarKeeperIcon.jpg */; };
 		AED44B9A1C718D39007B13DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED44B991C718D39007B13DE /* AppDelegate.swift */; };
 		AED44B9C1C718D39007B13DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED44B9B1C718D39007B13DE /* ViewController.swift */; };
 		AED44B9F1C718D39007B13DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED44B9D1C718D39007B13DE /* Main.storyboard */; };
@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AE42734B1C7BF6EA006D0072 /* CarKeeper App.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "CarKeeper App.jpg"; path = "../../../../.Trash/CarKeeper App.jpg"; sourceTree = "<group>"; };
+		AE12E1D81C7DF7950069769D /* CarKeeperIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CarKeeperIcon.jpg; sourceTree = "<group>"; };
 		AED44B961C718D39007B13DE /* CarKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED44B991C718D39007B13DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AED44B9B1C718D39007B13DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,14 +76,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AE42734A1C7BF6A5006D0072 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				AE42734B1C7BF6EA006D0072 /* CarKeeper App.jpg */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 		AED44B8D1C718D39007B13DE = {
 			isa = PBXGroup;
 			children = (
@@ -107,11 +99,11 @@
 		AED44B981C718D39007B13DE /* CarKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				AE42734A1C7BF6A5006D0072 /* Images */,
 				AED44B991C718D39007B13DE /* AppDelegate.swift */,
 				AED44B9B1C718D39007B13DE /* ViewController.swift */,
 				AED44B9D1C718D39007B13DE /* Main.storyboard */,
 				AED44BA01C718D39007B13DE /* Assets.xcassets */,
+				AE12E1D81C7DF7950069769D /* CarKeeperIcon.jpg */,
 				AED44BA21C718D39007B13DE /* LaunchScreen.storyboard */,
 				AED44BA51C718D39007B13DE /* Info.plist */,
 			);
@@ -243,7 +235,7 @@
 				AED44BA41C718D39007B13DE /* LaunchScreen.storyboard in Resources */,
 				AED44BA11C718D39007B13DE /* Assets.xcassets in Resources */,
 				AED44B9F1C718D39007B13DE /* Main.storyboard in Resources */,
-				AE42734C1C7BF6EA006D0072 /* CarKeeper App.jpg in Resources */,
+				AE12E1D91C7DF7950069769D /* CarKeeperIcon.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
