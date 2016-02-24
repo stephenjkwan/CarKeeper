@@ -1,0 +1,63 @@
+***** Instructions to Pull Xcode Project from Repo *****
+This guide is assumging no experience with Git, and no existing working copy
+on your local machine. There may be better ways to do the following steps;
+however, this is what I have done.
+
+(working copy - a checkout of the project from the remote repository)
+(remote reopository - the repository on the gitlab server)
+
+1. I recommend making a new file on your desktop or wherever you want the
+   project to be. In that directory run the following command:
+
+   "git clone https://gitlab.com/utk_cosc340_sp16/team12.git"
+
+   This will create an exact working copy on your local machine
+   Or I believe to do this in all one command run the following command:
+
+   RUN THIS COMMAND BELOW IT IS EASIER AND MORE STRAIGHT FORWARD
+
+   "git clone https://gitlab.com/utk_cosc340_sp16/team12.git Desktop/CarKeeper/
+   
+   This command will clone the repository from the remote repository onto
+   your Desktop in a Directory called CarKeeper
+
+2. Open the project through your GUI, by double clicking on the
+   CarKeeper.xcodeproj
+
+3. Now when you commit, add, push (all commands to push your local repo
+   to the remote repo) There Are two options:
+
+   IN TERMINAL(RECOMMENDED):
+		cd to your local repo:
+		based on the above commands it probably is
+		"cd ~/Desktop/CarKeeper"
+		
+		Next git add:
+		"git add ." adds everything in that directory(may need more options)
+
+		Next git commit:
+		commits to the changes in your local repository
+		"git commit -m <message>" 
+
+		Next git push:
+		pushes to the remote repository
+		"git push origin master"
+
+		If you get this error
+		"fatal: Not a git repository (or any of the parent directories): .git"
+		Run following command then run the git push command above: 
+		"git remote add origin https://gitlab.com/utk_cosc340_sp16/team12.git"
+
+	IN XCODE(NOT RECOMMENDED ALTHOUGH EASIER):
+		The reason I do not recommend this is because I am not sure the exact
+		interactions. Also I asked another develop(Kyle Bashour) and he said
+		he never uses the apple source control
+		
+		I dont want to explain this part so lookup a tutorial LOL.
+		But in summary go to sourceControl tab and do commit and push
+		it should commit directly to the remote repository.
+
+
+
+		
+
