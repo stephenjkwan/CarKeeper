@@ -20,6 +20,9 @@ however, this is what I have done.
    
    This command will clone the repository from the remote repository onto
    your Desktop in a Directory called CarKeeper
+   
+   To open the project, you will need to either click on the .xcodeproj file
+   or execute "open <projName>.xcodeproj
 
 2. Open the project through your GUI, by double clicking on the
    CarKeeper.xcodeproj
