@@ -21,7 +21,7 @@
                                 <rect key="frame" x="195" y="279" width="210" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRA-3v-oF4">
@@ -78,7 +78,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqc-eq-i2F">
                                 <rect key="frame" x="259.5" y="289.5" width="81.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -110,13 +110,13 @@
                                 <rect key="frame" x="195" y="279" width="209.5" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
                                 <rect key="frame" x="300" y="329" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -133,6 +133,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2059" y="565"/>
+        </scene>
+        <!--Add A New Car -->
+        <scene sceneID="Vug-ll-8QH">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" id="dbL-A9-Oh1" customClass="SaveMenu" customModule="CarKeeper1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SSN-xI-zG1"/>
+                        <viewControllerLayoutGuide type="bottom" id="syA-b1-fSA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MaB-Hy-58M">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add A New Car " id="EP0-aC-Z0N">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2Au-Q0-ljh">
+                            <connections>
+                                <action selector="SaveCarButton:" destination="dbL-A9-Oh1" id="NjU-kD-AA3"/>
+                                <segue destination="nIQ-h5-ARO" kind="show" id="h0w-rQ-qVi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RO2-r6-Rgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198" y="-1371"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="dJU-9G-786">
@@ -171,16 +198,23 @@
                             <constraint firstItem="oDh-Bh-xOY" firstAttribute="width" secondItem="ELW-Kv-732" secondAttribute="width" id="r5V-fe-SeB"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="u8X-6m-GtF">
-                        <barButtonItem key="backBarButtonItem" title="Cars" id="nQM-ya-5na"/>
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="H58-XX-vuS"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="g2j-qi-wgf">
+                            <connections>
+                                <segue destination="dbL-A9-Oh1" kind="show" id="gMo-67-r4m"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="MainMenuScrollView" destination="oDh-Bh-xOY" id="cQq-cT-x5m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P04-U9-4gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176" y="-357"/>
+            <point key="canvasLocation" x="1198" y="-357"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -226,4 +260,7 @@
         <image name="second" width="30" height="30"/>
         <image name="second-1" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="h0w-rQ-qVi"/>
+    </inferredMetricsTieBreakers>
 </document>
