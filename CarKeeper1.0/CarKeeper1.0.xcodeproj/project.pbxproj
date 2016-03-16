@@ -17,7 +17,7 @@
 		AEA8F3EC1C822E6500C16E70 /* CarKeeper1_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8F3EB1C822E6500C16E70 /* CarKeeper1_0UITests.swift */; };
 		AEA8F3FC1C8238FD00C16E70 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8F3FB1C8238FD00C16E70 /* ThirdViewController.swift */; };
 		AECD8E731C98AF66003AC7C9 /* SaveMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD8E721C98AF66003AC7C9 /* SaveMenu.swift */; };
-		AECD8E751C98B560003AC7C9 /* Cars.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD8E741C98B560003AC7C9 /* Cars.swift */; };
+		AECD8E751C98B560003AC7C9 /* CarStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD8E741C98B560003AC7C9 /* CarStruct.swift */; };
 		AECD8E771C98CB14003AC7C9 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD8E761C98CB14003AC7C9 /* MainMenu.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		AEA8F3ED1C822E6500C16E70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEA8F3FB1C8238FD00C16E70 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		AECD8E721C98AF66003AC7C9 /* SaveMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveMenu.swift; sourceTree = "<group>"; };
-		AECD8E741C98B560003AC7C9 /* Cars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cars.swift; sourceTree = "<group>"; };
+		AECD8E741C98B560003AC7C9 /* CarStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarStruct.swift; sourceTree = "<group>"; };
 		AECD8E761C98CB14003AC7C9 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,7 +113,7 @@
 				AEA8F3CD1C822E6500C16E70 /* SecondViewController.swift */,
 				AEA8F3FB1C8238FD00C16E70 /* ThirdViewController.swift */,
 				AEA8F3CF1C822E6500C16E70 /* Main.storyboard */,
-				AECD8E741C98B560003AC7C9 /* Cars.swift */,
+				AECD8E741C98B560003AC7C9 /* CarStruct.swift */,
 				AECD8E721C98AF66003AC7C9 /* SaveMenu.swift */,
 				AEA8F3D21C822E6500C16E70 /* Assets.xcassets */,
 				AEA8F3D41C822E6500C16E70 /* LaunchScreen.storyboard */,
@@ -277,7 +277,7 @@
 				AEA8F3FC1C8238FD00C16E70 /* ThirdViewController.swift in Sources */,
 				AEA8F3CC1C822E6500C16E70 /* FirstViewController.swift in Sources */,
 				AECD8E731C98AF66003AC7C9 /* SaveMenu.swift in Sources */,
-				AECD8E751C98B560003AC7C9 /* Cars.swift in Sources */,
+				AECD8E751C98B560003AC7C9 /* CarStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
