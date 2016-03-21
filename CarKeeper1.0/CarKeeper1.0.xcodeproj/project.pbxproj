@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22D655BD1C9D193D00F06E00 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655BC1C9D193D00F06E00 /* CarTableViewCell.swift */; };
+		22D655BF1C9D1B1400F06E00 /* Ferrari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22D655BE1C9D1B1400F06E00 /* Ferrari.jpg */; };
+		22D655C11C9D1D3300F06E00 /* CarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */; };
+		22D655C31C9D1DD200F06E00 /* MyCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C21C9D1DD200F06E00 /* MyCars.swift */; };
 		AEA8F3CA1C822E6500C16E70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8F3C91C822E6500C16E70 /* AppDelegate.swift */; };
 		AEA8F3CC1C822E6500C16E70 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8F3CB1C822E6500C16E70 /* FirstViewController.swift */; };
 		AEA8F3CE1C822E6500C16E70 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8F3CD1C822E6500C16E70 /* SecondViewController.swift */; };
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22D655BC1C9D193D00F06E00 /* CarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		22D655BE1C9D1B1400F06E00 /* Ferrari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Ferrari.jpg; path = ../../../../../Documents/Ferrari.jpg; sourceTree = "<group>"; };
+		22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewController.swift; sourceTree = "<group>"; };
+		22D655C21C9D1DD200F06E00 /* MyCars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCars.swift; sourceTree = "<group>"; };
 		AEA8F3C61C822E6500C16E70 /* CarKeeper1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarKeeper1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA8F3C91C822E6500C16E70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AEA8F3CB1C822E6500C16E70 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +121,10 @@
 				AEA8F3CD1C822E6500C16E70 /* SecondViewController.swift */,
 				AEA8F3FB1C8238FD00C16E70 /* ThirdViewController.swift */,
 				AEA8F3CF1C822E6500C16E70 /* Main.storyboard */,
+				22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */,
+				22D655C21C9D1DD200F06E00 /* MyCars.swift */,
+				22D655BE1C9D1B1400F06E00 /* Ferrari.jpg */,
+				22D655BC1C9D193D00F06E00 /* CarTableViewCell.swift */,
 				AECD8E741C98B560003AC7C9 /* CarStruct.swift */,
 				AECD8E721C98AF66003AC7C9 /* SaveMenu.swift */,
 				AEA8F3D21C822E6500C16E70 /* Assets.xcassets */,
@@ -208,6 +220,7 @@
 				TargetAttributes = {
 					AEA8F3C51C822E6500C16E70 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 9WLS8BHRH5;
 					};
 					AEA8F3DB1C822E6500C16E70 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -245,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEA8F3D61C822E6500C16E70 /* LaunchScreen.storyboard in Resources */,
+				22D655BF1C9D1B1400F06E00 /* Ferrari.jpg in Resources */,
 				AEA8F3D31C822E6500C16E70 /* Assets.xcassets in Resources */,
 				AEA8F3D11C822E6500C16E70 /* Main.storyboard in Resources */,
 			);
@@ -272,11 +286,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEA8F3CE1C822E6500C16E70 /* SecondViewController.swift in Sources */,
+				22D655C11C9D1D3300F06E00 /* CarTableViewController.swift in Sources */,
 				AEA8F3CA1C822E6500C16E70 /* AppDelegate.swift in Sources */,
+				22D655BD1C9D193D00F06E00 /* CarTableViewCell.swift in Sources */,
 				AECD8E771C98CB14003AC7C9 /* MainMenu.swift in Sources */,
 				AEA8F3FC1C8238FD00C16E70 /* ThirdViewController.swift in Sources */,
 				AEA8F3CC1C822E6500C16E70 /* FirstViewController.swift in Sources */,
 				AECD8E731C98AF66003AC7C9 /* SaveMenu.swift in Sources */,
+				22D655C31C9D1DD200F06E00 /* MyCars.swift in Sources */,
 				AECD8E751C98B560003AC7C9 /* CarStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,10 +434,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CarKeeper1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alto.CarKeeper1-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -428,10 +448,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CarKeeper1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alto.CarKeeper1-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
