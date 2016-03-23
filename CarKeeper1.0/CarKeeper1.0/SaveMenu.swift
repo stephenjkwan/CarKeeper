@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/*
 class SaveMenu: UIViewController {
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
@@ -68,3 +68,4 @@ class SaveMenu: UIViewController {
 
 
 }
+*/
