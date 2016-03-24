@@ -15,6 +15,8 @@ class AddCarViewController: UIViewController,UIImagePickerControllerDelegate, UI
     @IBOutlet weak var CarModelTextField: UITextField!
     @IBOutlet weak var CarMileageTextField: UITextField!
     @IBOutlet weak var DefaultImageView: UIImageView!
+    @IBOutlet weak var SaveButton: UIBarButtonItem!
+    var Cars: MyCars?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,9 @@ class AddCarViewController: UIViewController,UIImagePickerControllerDelegate, UI
         // Dispose of any resources that can be recreated.
     }
 */
+    @IBAction func CancelAdd(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     func PhotoPickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion:nil)
     }
@@ -39,6 +44,18 @@ class AddCarViewController: UIViewController,UIImagePickerControllerDelegate, UI
         DefaultImageView.image = selectedPhoto
         //dismiss picker
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    // allows you to configure view controller before presented
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if SaveButton === sender {
+            let FullCarName = CarYearTextField.text! + " " + CarMakeTextField.text! + " " + CarModelTextField.text!
+            let CarName = FullCarName ?? ""
+            let CarPhoto = DefaultImageView.image
+            
+            
+            // Set the meal to be passed to CartTableViewController after the unwind segue.
+            Cars = MyCars(CarName: CarName, CarPhoto: CarPhoto)
+        }
     }
     //Actions
     

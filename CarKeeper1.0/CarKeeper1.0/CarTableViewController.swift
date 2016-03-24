@@ -10,7 +10,7 @@ import UIKit
 
 class CarTableViewController: UITableViewController {
 
-    var CarArray = [MyCars]()
+    var carArray = [MyCars]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class CarTableViewController: UITableViewController {
     func loadCarView(){
         let CarImage = UIImage(named: "Ferrari.jpg")!
         let CarView = MyCars(CarName: "Ferrari 458", CarPhoto: CarImage)!
-        CarArray+=[CarView]
+        carArray+=[CarView]
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,20 +33,31 @@ class CarTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return CarArray.count
+            return carArray.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "CarTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CarTableViewCell
         
-        // Fetches the appropriate meal for the data source layout.
-        let temp = CarArray[indexPath.row]
+        // Fetches the appropriate car for the data source layout.
+        let temp = carArray[indexPath.row]
         
         cell.CarNameLabel.text = temp.CarName
         cell.CarImage.image = temp.CarPhoto
         
         return cell
     }
+    @IBAction func unwindToCarList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? AddCarViewController, Cars = sourceViewController.Cars{
+            // Add a new car item.
+            let newIndexPath = NSIndexPath(forRow: carArray.count, inSection: 0)
+            carArray.append(Cars)
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+        }
+    }
+    
+    
+    
     
 }

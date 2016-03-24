@@ -212,8 +212,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add Car" id="bGo-8u-8cs">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sZV-qK-wRq"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="AaK-um-JNQ"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sZV-qK-wRq">
+                            <connections>
+                                <action selector="CancelAdd:" destination="dbL-A9-Oh1" id="423-Ze-9EB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="AaK-um-JNQ">
+                            <connections>
+                                <segue destination="P7P-s4-CKE" kind="unwind" unwindAction="unwindToCarList:" id="fPE-o2-UKp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="CarMakeTextField" destination="NSv-x5-ma4" id="pWr-cM-VN9"/>
@@ -221,9 +229,11 @@
                         <outlet property="CarModelTextField" destination="yJb-Ql-1Ch" id="Wcd-Lw-FTd"/>
                         <outlet property="CarYearTextField" destination="26B-4X-BZj" id="Xd5-dg-ygr"/>
                         <outlet property="DefaultImageView" destination="3kr-x5-2Ku" id="4Oq-VV-7ai"/>
+                        <outlet property="SaveButton" destination="AaK-um-JNQ" id="cYC-GU-gl0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RO2-r6-Rgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="P7P-s4-CKE" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="Za6-5b-aiI">
                     <connections>
                         <action selector="selectImageFromLibrary:" destination="dbL-A9-Oh1" id="tVu-iE-iVh"/>
@@ -252,7 +262,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="151" height="89"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFD-HK-IYY">
-                                            <rect key="frame" x="159" y="0.0" width="264" height="89"/>
+                                            <rect key="frame" x="159" y="0.0" width="408" height="89"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
