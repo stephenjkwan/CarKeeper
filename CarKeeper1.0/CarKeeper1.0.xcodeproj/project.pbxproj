@@ -12,6 +12,8 @@
 		22D655C11C9D1D3300F06E00 /* CarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */; };
 		22D655C31C9D1DD200F06E00 /* MyCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C21C9D1DD200F06E00 /* MyCars.swift */; };
 		22D655C51CA1B93500F06E00 /* AddCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C41CA1B93500F06E00 /* AddCarViewController.swift */; };
+		22D655C71CA47EEA00F06E00 /* GasMileageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C61CA47EEA00F06E00 /* GasMileageTableViewController.swift */; };
+		22D655C91CA47FAA00F06E00 /* GasMileageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C81CA47FAA00F06E00 /* GasMileageTableViewCell.swift */; };
 		AEA8F3CA1C822E6500C16E70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8F3C91C822E6500C16E70 /* AppDelegate.swift */; };
 		AEA8F3CC1C822E6500C16E70 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8F3CB1C822E6500C16E70 /* FirstViewController.swift */; };
 		AEA8F3CE1C822E6500C16E70 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8F3CD1C822E6500C16E70 /* SecondViewController.swift */; };
@@ -47,6 +49,8 @@
 		22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewController.swift; sourceTree = "<group>"; };
 		22D655C21C9D1DD200F06E00 /* MyCars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCars.swift; sourceTree = "<group>"; };
 		22D655C41CA1B93500F06E00 /* AddCarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCarViewController.swift; sourceTree = "<group>"; };
+		22D655C61CA47EEA00F06E00 /* GasMileageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasMileageTableViewController.swift; sourceTree = "<group>"; };
+		22D655C81CA47FAA00F06E00 /* GasMileageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasMileageTableViewCell.swift; sourceTree = "<group>"; };
 		AEA8F3C61C822E6500C16E70 /* CarKeeper1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarKeeper1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA8F3C91C822E6500C16E70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AEA8F3CB1C822E6500C16E70 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +123,9 @@
 				AEA8F3CD1C822E6500C16E70 /* SecondViewController.swift */,
 				AEA8F3FB1C8238FD00C16E70 /* ThirdViewController.swift */,
 				AEA8F3CF1C822E6500C16E70 /* Main.storyboard */,
+				22D655C81CA47FAA00F06E00 /* GasMileageTableViewCell.swift */,
 				22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */,
+				22D655C61CA47EEA00F06E00 /* GasMileageTableViewController.swift */,
 				22D655C21C9D1DD200F06E00 /* MyCars.swift */,
 				22D655BE1C9D1B1400F06E00 /* Ferrari.jpg */,
 				22D655BC1C9D193D00F06E00 /* CarTableViewCell.swift */,
@@ -286,8 +292,10 @@
 				22D655C11C9D1D3300F06E00 /* CarTableViewController.swift in Sources */,
 				AEA8F3CA1C822E6500C16E70 /* AppDelegate.swift in Sources */,
 				22D655BD1C9D193D00F06E00 /* CarTableViewCell.swift in Sources */,
+				22D655C71CA47EEA00F06E00 /* GasMileageTableViewController.swift in Sources */,
 				AECD8E771C98CB14003AC7C9 /* MainMenu.swift in Sources */,
 				22D655C51CA1B93500F06E00 /* AddCarViewController.swift in Sources */,
+				22D655C91CA47FAA00F06E00 /* GasMileageTableViewCell.swift in Sources */,
 				AEA8F3FC1C8238FD00C16E70 /* ThirdViewController.swift in Sources */,
 				AEA8F3CC1C822E6500C16E70 /* FirstViewController.swift in Sources */,
 				22D655C31C9D1DD200F06E00 /* MyCars.swift in Sources */,
