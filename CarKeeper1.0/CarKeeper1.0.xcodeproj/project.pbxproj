@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		22D655BD1C9D193D00F06E00 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655BC1C9D193D00F06E00 /* CarTableViewCell.swift */; };
-		22D655BF1C9D1B1400F06E00 /* Ferrari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22D655BE1C9D1B1400F06E00 /* Ferrari.jpg */; };
 		22D655C11C9D1D3300F06E00 /* CarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */; };
 		22D655C31C9D1DD200F06E00 /* MyCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C21C9D1DD200F06E00 /* MyCars.swift */; };
 		22D655C51CA1B93500F06E00 /* AddCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C41CA1B93500F06E00 /* AddCarViewController.swift */; };
@@ -45,7 +44,6 @@
 
 /* Begin PBXFileReference section */
 		22D655BC1C9D193D00F06E00 /* CarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
-		22D655BE1C9D1B1400F06E00 /* Ferrari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Ferrari.jpg; path = ../../../../../Documents/Ferrari.jpg; sourceTree = "<group>"; };
 		22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewController.swift; sourceTree = "<group>"; };
 		22D655C21C9D1DD200F06E00 /* MyCars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCars.swift; sourceTree = "<group>"; };
 		22D655C41CA1B93500F06E00 /* AddCarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCarViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 				22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */,
 				22D655C61CA47EEA00F06E00 /* GasMileageTableViewController.swift */,
 				22D655C21C9D1DD200F06E00 /* MyCars.swift */,
-				22D655BE1C9D1B1400F06E00 /* Ferrari.jpg */,
 				22D655BC1C9D193D00F06E00 /* CarTableViewCell.swift */,
 				22D655C41CA1B93500F06E00 /* AddCarViewController.swift */,
 				AEA8F3D21C822E6500C16E70 /* Assets.xcassets */,
@@ -261,7 +258,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEA8F3D61C822E6500C16E70 /* LaunchScreen.storyboard in Resources */,
-				22D655BF1C9D1B1400F06E00 /* Ferrari.jpg in Resources */,
 				AEA8F3D31C822E6500C16E70 /* Assets.xcassets in Resources */,
 				AEA8F3D11C822E6500C16E70 /* Main.storyboard in Resources */,
 			);
