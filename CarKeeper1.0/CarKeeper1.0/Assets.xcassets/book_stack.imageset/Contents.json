@@ -2,7 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "first.pdf"
+      "filename" : "book_stack.png",
+      "scale" : "1x"
     }
   ],
   "info" : {

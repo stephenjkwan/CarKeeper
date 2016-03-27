@@ -14,13 +14,13 @@ class CarTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadCarView()
+        //loadCarView()
     }
-    func loadCarView(){
-        let CarImage = UIImage(named: "Ferrari.jpg")!
-        let CarView = MyCars(CarName: "Ferrari 458", CarPhoto: CarImage)!
-        carArray+=[CarView]
-    }
+    //func loadCarView(){
+        //let CarImage = UIImage(named: "Ferrari.jpg")!
+        //let CarView = MyCars(CarName: "Ferrari 458", CarPhoto: CarImage)!
+       // carArray+=[CarView]
+    //}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

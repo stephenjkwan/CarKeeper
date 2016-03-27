@@ -2,7 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "second.pdf"
+      "filename" : "check-engine-light-1.png",
+      "scale" : "1x"
     }
   ],
   "info" : {
