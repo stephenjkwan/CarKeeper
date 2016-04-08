@@ -13,16 +13,17 @@ import UIKit
 class MyCars {//: NSObject, NSCoding {
     var CarName: String
     var CarPhoto: UIImage?
+    var GasMileage: Int?
     
     //MARK: Archive Paths we use to store and retrieve data.
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("cars")
     
-    init?(CarName: String, CarPhoto: UIImage?){
+    init?(CarName: String, CarPhoto: UIImage?, GasMileage: Int?){
         self.CarName = CarName
         self.CarPhoto = CarPhoto
-        
-        //super.init()
+        self.GasMileage = GasMileage
+       // super.init()
     }
     //MARK: NSCODING
     /*func encodeWithCoder(aCoder: NSCoder) {
@@ -35,8 +36,8 @@ class MyCars {//: NSObject, NSCoding {
         let photo = aDecoder.decodeObjectForKey(PropertyKey.photoKey) as? UIImage
         self.init(CarName:name, CarPhoto:photo)
         
-    }*/
-    /*required convenience init?(coder aDecoder: NSCoding){
+    }
+    required convenience init?(coder aDecoder: NSCoding){
         let CarName = aDecoder.decodeObjectKey
     }*/
     
