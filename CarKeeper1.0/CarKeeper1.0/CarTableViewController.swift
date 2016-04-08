@@ -14,6 +14,8 @@ class CarTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //use the edit button provided by the table view controller
+        navigationItem.leftBarButtonItem = editButtonItem()
         //loadCarView()
     }
     //func loadCarView(){
@@ -30,6 +32,22 @@ class CarTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
             return 1
+    }
+    //override to support editing the table view
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        if editingStyle == .Delete{
+            // Delete the row from the car array
+            carArray.removeAtIndex(indexPath.row)
+            //deletes from the table view
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert{
+            
+        }
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,8 +74,17 @@ class CarTableViewController: UITableViewController {
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
         }
     }
+    //MARK NSCODING
+    /*func saveCars(){
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(carArray, toFile: MyCars.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("Failed to save Cars...")
+        }
+    }
     
-    
+    func loadCars()->[MyCars]?{
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(MyCars.ArchiveURL.path!) as? [MyCars]
+    }*/
     
     
 }
