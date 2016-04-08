@@ -16,6 +16,14 @@ class CarTableViewController: UITableViewController {
         super.viewDidLoad()
         //use the edit button provided by the table view controller
         navigationItem.leftBarButtonItem = editButtonItem()
+        /*if let statement tries to unwrapp the returned car array from loadcars() function.
+         If it can assign savedCars (meaning that loadCars() does not return nil) it will return true
+         and execute the if statement, which is array addition... I guess you can do that in swift
+         im too used to C where your not allowed to do anything.
+            */
+        if let savedCars = loadCars(){
+            carArray += savedCars
+        }
         //loadCarView()
     }
     //func loadCarView(){
@@ -38,12 +46,14 @@ class CarTableViewController: UITableViewController {
         if editingStyle == .Delete{
             // Delete the row from the car array
             carArray.removeAtIndex(indexPath.row)
+            //save the cars whenver an instance of the cars is deleted
+            saveCars()
             //deletes from the table view
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert{
-            
+            //create a new instance? idk...
         }
-    }
+            }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
@@ -73,18 +83,21 @@ class CarTableViewController: UITableViewController {
             carArray.append(Cars)
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
         }
+        //save the Cars
+        saveCars()
     }
     //MARK NSCODING
-    /*func saveCars(){
+    //function to archive car array to a specific location. isSuccessfulSave retruns true if it saved successfully
+    func saveCars(){
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(carArray, toFile: MyCars.ArchiveURL.path!)
         if !isSuccessfulSave {
             print("Failed to save Cars...")
         }
     }
-    
+    //function loads cars from the archive we previously stored the car array to our carArray
     func loadCars()->[MyCars]?{
         return NSKeyedUnarchiver.unarchiveObjectWithFile(MyCars.ArchiveURL.path!) as? [MyCars]
-    }*/
+    }
     
     
 }
