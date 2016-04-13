@@ -1,0 +1,28 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EDEC893B6BAE97A643DDF9EC259B88D66DD0A414",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EDEC893B6BAE97A643DDF9EC259B88D66DD0A414" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9D2F00E0-975C-4E1A-A7B0-C014D6E0B641",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EDEC893B6BAE97A643DDF9EC259B88D66DD0A414" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CarKeeper1.0",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CarKeeper1.0\/CarKeeper1.0.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.com:utk_cosc340_sp16\/team12.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EDEC893B6BAE97A643DDF9EC259B88D66DD0A414"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/gitlab.com\/utk_cosc340_sp16\/team12.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EDEC893B6BAE97A643DDF9EC259B88D66DD0A414"
+    }
+  ]
+}
