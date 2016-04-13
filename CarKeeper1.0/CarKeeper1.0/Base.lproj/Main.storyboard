@@ -698,6 +698,9 @@
                                 <rect key="frame" x="187" y="245" width="210" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editDateTextField:" destination="8Gq-mR-bZg" eventType="editingDidBegin" id="LDh-y0-TUn"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nU-Os-krP">
                                 <rect key="frame" x="6" y="204" width="560" height="33"/>

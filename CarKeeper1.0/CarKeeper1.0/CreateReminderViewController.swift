@@ -31,8 +31,19 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
+    @IBAction func editDateTextField(sender: UITextField) {
+        
+    let datePickView : UIDatePicker = UIDatePicker()
+    datePickView.datePickerMode = UIDatePickerMode.Date
+    sender.inputView = datePickView
+    datePickView.addTarget(self,action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    func handleDatePicker(sender:UIDatePicker){
+        let dateHandler = NSDateFormatter()
+        dateHandler.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateHandler.timeStyle = NSDateFormatterStyle.NoStyle
+        DateTextField.text = dateHandler.stringFromDate(sender.date)
+    }
     /*
     // MARK: - Navigation
 
