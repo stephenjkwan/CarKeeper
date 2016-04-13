@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22B8B7411CBEE7AE00B037C3 /* CreateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B8B7401CBEE7AE00B037C3 /* CreateReminderViewController.swift */; };
+		22B8B7431CBEEF8B00B037C3 /* MaintenanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B8B7421CBEEF8B00B037C3 /* MaintenanceTableViewController.swift */; };
+		22B8B7451CBEEF9E00B037C3 /* MaintenanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B8B7441CBEEF9E00B037C3 /* MaintenanceTableViewCell.swift */; };
+		22B8B7471CBEF65900B037C3 /* MyReminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B8B7461CBEF65900B037C3 /* MyReminders.swift */; };
 		22D655BD1C9D193D00F06E00 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655BC1C9D193D00F06E00 /* CarTableViewCell.swift */; };
 		22D655C11C9D1D3300F06E00 /* CarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */; };
 		22D655C31C9D1DD200F06E00 /* MyCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C21C9D1DD200F06E00 /* MyCars.swift */; };
@@ -40,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22B8B7401CBEE7AE00B037C3 /* CreateReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReminderViewController.swift; sourceTree = "<group>"; };
+		22B8B7421CBEEF8B00B037C3 /* MaintenanceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaintenanceTableViewController.swift; sourceTree = "<group>"; };
+		22B8B7441CBEEF9E00B037C3 /* MaintenanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaintenanceTableViewCell.swift; sourceTree = "<group>"; };
+		22B8B7461CBEF65900B037C3 /* MyReminders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReminders.swift; sourceTree = "<group>"; };
 		22D655BC1C9D193D00F06E00 /* CarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewController.swift; sourceTree = "<group>"; };
 		22D655C21C9D1DD200F06E00 /* MyCars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCars.swift; sourceTree = "<group>"; };
@@ -109,18 +117,22 @@
 		AEA8F3C81C822E6500C16E70 /* CarKeeper1.0 */ = {
 			isa = PBXGroup;
 			children = (
-				AEA8F3C91C822E6500C16E70 /* AppDelegate.swift */,
-				AECD8E761C98CB14003AC7C9 /* MainMenu.swift */,
-				AEA8F3CF1C822E6500C16E70 /* Main.storyboard */,
-				22D655C81CA47FAA00F06E00 /* GasMileageTableViewCell.swift */,
-				22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */,
-				22D655C61CA47EEA00F06E00 /* GasMileageTableViewController.swift */,
-				22D655C21C9D1DD200F06E00 /* MyCars.swift */,
-				22D655BC1C9D193D00F06E00 /* CarTableViewCell.swift */,
 				22D655C41CA1B93500F06E00 /* AddCarViewController.swift */,
+				AEA8F3C91C822E6500C16E70 /* AppDelegate.swift */,
 				AEA8F3D21C822E6500C16E70 /* Assets.xcassets */,
-				AEA8F3D41C822E6500C16E70 /* LaunchScreen.storyboard */,
+				22D655BC1C9D193D00F06E00 /* CarTableViewCell.swift */,
+				22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */,
+				22B8B7401CBEE7AE00B037C3 /* CreateReminderViewController.swift */,
+				22D655C81CA47FAA00F06E00 /* GasMileageTableViewCell.swift */,
+				22D655C61CA47EEA00F06E00 /* GasMileageTableViewController.swift */,
 				AEA8F3D71C822E6500C16E70 /* Info.plist */,
+				AEA8F3D41C822E6500C16E70 /* LaunchScreen.storyboard */,
+				AEA8F3CF1C822E6500C16E70 /* Main.storyboard */,
+				AECD8E761C98CB14003AC7C9 /* MainMenu.swift */,
+				22B8B7441CBEEF9E00B037C3 /* MaintenanceTableViewCell.swift */,
+				22B8B7421CBEEF8B00B037C3 /* MaintenanceTableViewController.swift */,
+				22D655C21C9D1DD200F06E00 /* MyCars.swift */,
+				22B8B7461CBEF65900B037C3 /* MyReminders.swift */,
 			);
 			path = CarKeeper1.0;
 			sourceTree = "<group>";
@@ -278,11 +290,15 @@
 				22D655C11C9D1D3300F06E00 /* CarTableViewController.swift in Sources */,
 				AEA8F3CA1C822E6500C16E70 /* AppDelegate.swift in Sources */,
 				22D655BD1C9D193D00F06E00 /* CarTableViewCell.swift in Sources */,
+				22B8B7471CBEF65900B037C3 /* MyReminders.swift in Sources */,
 				22D655C71CA47EEA00F06E00 /* GasMileageTableViewController.swift in Sources */,
 				AECD8E771C98CB14003AC7C9 /* MainMenu.swift in Sources */,
 				22D655C51CA1B93500F06E00 /* AddCarViewController.swift in Sources */,
 				22D655C91CA47FAA00F06E00 /* GasMileageTableViewCell.swift in Sources */,
+				22B8B7451CBEEF9E00B037C3 /* MaintenanceTableViewCell.swift in Sources */,
 				22D655C31C9D1DD200F06E00 /* MyCars.swift in Sources */,
+				22B8B7411CBEE7AE00B037C3 /* CreateReminderViewController.swift in Sources */,
+				22B8B7431CBEEF8B00B037C3 /* MaintenanceTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
