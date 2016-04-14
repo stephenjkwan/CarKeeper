@@ -37,14 +37,19 @@ class MaintenanceTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return newReminder.count
     }
-
-    
+    @IBAction func unwindToReminderList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? CreateReminderViewController, Reminder = sourceViewController.Reminder{
+            let newIndexPath = NSIndexPath(forRow: newReminder.count, inSection: 0)
+            newReminder.append(Reminder)
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+        }
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "MaintenanceTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MaintenanceTableViewCell
         
         let tmp = newReminder[indexPath.row]
-        cell.ReminderLabel.text = tmp.date
+        cell.ReminderLabel.text = tmp.reminderDetail
         cell.DateLabel.text = tmp.date
         return cell
     }

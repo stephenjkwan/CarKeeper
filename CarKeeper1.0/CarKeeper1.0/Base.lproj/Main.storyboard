@@ -658,7 +658,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycz-4m-Dl9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3470" y="-1204"/>
+            <point key="canvasLocation" x="3540" y="-1204"/>
         </scene>
         <!--Create Reminder-->
         <scene sceneID="FFq-0c-VEh">
@@ -673,7 +673,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reminder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqS-mR-NlU">
-                                <rect key="frame" x="6" y="8" width="560" height="33"/>
+                                <rect key="frame" x="6" y="8" width="574" height="33"/>
                                 <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -703,28 +703,28 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nU-Os-krP">
-                                <rect key="frame" x="6" y="204" width="560" height="33"/>
+                                <rect key="frame" x="6" y="204" width="574" height="33"/>
                                 <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Frequency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T53-0h-Kho">
-                                <rect key="frame" x="6" y="87" width="560" height="33"/>
+                                <rect key="frame" x="6" y="87" width="574" height="33"/>
                                 <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhu-5B-z7z">
-                                <rect key="frame" x="6" y="283" width="560" height="33"/>
+                                <rect key="frame" x="6" y="283" width="574" height="33"/>
                                 <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note To Self" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lcY-Ol-iTk">
-                                <rect key="frame" x="6" y="324" width="560" height="30"/>
+                                <rect key="frame" x="6" y="324" width="574" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -732,17 +732,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Reminder" id="wr4-Os-kby">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="LJE-hF-Scx"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KXs-hN-5od"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="LJE-hF-Scx">
+                            <connections>
+                                <action selector="CancelAdd:" destination="8Gq-mR-bZg" id="nkT-Oi-rb8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KXs-hN-5od">
+                            <connections>
+                                <segue destination="A9Q-KJ-rF9" kind="unwind" unwindAction="unwindToReminderList:" id="R3G-ny-ng7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="DateTextField" destination="ZAJ-6w-kt7" id="vqc-uR-cF9"/>
                         <outlet property="MileageTextField" destination="8Dr-EA-DBh" id="wXf-CN-gGz"/>
                         <outlet property="MonthTextField" destination="dKq-XK-0yy" id="G3C-He-jQ7"/>
-                        <outlet property="ReminderTextField" destination="4Qj-o0-FfD" id="OJL-Km-Xem"/>
+                        <outlet property="ReminderTextField" destination="4Qj-o0-FfD" id="G9L-ce-Rsk"/>
+                        <outlet property="SaveButton" destination="KXs-hN-5od" id="e76-9v-gZw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yxb-g1-tjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="A9Q-KJ-rF9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4246" y="-1210"/>
         </scene>
