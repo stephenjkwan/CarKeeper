@@ -13,16 +13,22 @@ import UIKit
 class MyCars : NSObject, NSCoding {
     var CarName: String
     var CarPhoto: UIImage?
-    var GasMileage: Int?
+    var TotalMileage: Int?
+    /*
+     Fillups is a dictionary where the key is the date of the fillup and the value is another class
+     which includes the total cost of the fillup and the odometer.
+     */
+    //var Fillups = [NSDate:GasFillup]()
     
     //MARK: Archive Paths we use to store and retrieve data.
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("cars")
     
-    init?(CarName: String, CarPhoto: UIImage?, GasMileage: Int?){
+    init?(CarName: String, CarPhoto: UIImage?, TotalMileage: Int?){ //Fillups: [NSDate:GasFillup]){
         self.CarName = CarName
         self.CarPhoto = CarPhoto
-        self.GasMileage = GasMileage
+        self.TotalMileage = TotalMileage
+        //self.Fillups = Fillups
         //not really sure why but need to call superclass initializer
         super.init()
     }
@@ -31,7 +37,8 @@ class MyCars : NSObject, NSCoding {
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(CarName, forKey: PropertyKey.nameKey)
         aCoder.encodeObject(CarPhoto, forKey: PropertyKey.photoKey)
-        aCoder.encodeObject(GasMileage, forKey: PropertyKey.mileageKey)
+        aCoder.encodeObject(TotalMileage, forKey: PropertyKey.mileageKey)
+        //aCoder.encodeObject(Fillups, forKey: PropertyKey.gasDictionaryKey)
     }
     //The required keyword means this initializer must be implemented on every subclass of the class that defines this initializer. Convenience denotes convenience intializer. The question mark (?) means that this is a failable initializer that might return nil.
     //decodes  the encoded data and initialize an instance using this information
@@ -39,7 +46,8 @@ class MyCars : NSObject, NSCoding {
         let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as! String
         let photo = aDecoder.decodeObjectForKey(PropertyKey.photoKey) as? UIImage
         let mileage = aDecoder.decodeObjectForKey(PropertyKey.mileageKey) as? Int
-        self.init(CarName:name, CarPhoto:photo, GasMileage: mileage)
+        //let fillups = aDecoder.decodeObjectForKey(PropertyKey.gasDictionaryKey) as! [NSDate:GasFillup]
+        self.init(CarName:name, CarPhoto:photo, TotalMileage: mileage)
         
     }
     /*required convenience init?(coder aDecoder: NSCoding){
@@ -56,6 +64,5 @@ struct PropertyKey{
     static let nameKey = "Name"
     static let photoKey = "Photo"
     static let mileageKey = "Mileage"
-    
-
+    static let gasDictionaryKey = "gasDictionary"
 }

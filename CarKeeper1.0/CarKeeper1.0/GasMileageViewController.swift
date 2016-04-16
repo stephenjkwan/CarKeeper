@@ -13,6 +13,7 @@ and learned how to include these source files through this stack overflow write 
  Currently I am looking at this tutorial http://www.appcoda.com/ios-charts-api-tutorial/
 */
 class GasMileageViewController: UIViewController {
+    let calendar = NSCalendar.currentCalendar()
     @IBOutlet weak var barChartView: BarChartView!
     override func viewDidLoad() {
         barChartView.noDataText = "No Data Provided"

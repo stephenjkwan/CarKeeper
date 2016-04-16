@@ -440,24 +440,23 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMB-43-pPe" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aMB-43-pPe" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="30" width="560" height="270"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="l4p-br-kMv" firstAttribute="top" secondItem="aMB-43-pPe" secondAttribute="bottom" id="Dve-3N-e1b"/>
-                            <constraint firstAttribute="trailing" secondItem="aMB-43-pPe" secondAttribute="trailing" id="Hzy-ZE-pR1"/>
-                            <constraint firstItem="aMB-43-pPe" firstAttribute="top" secondItem="Rbh-0x-f9f" secondAttribute="bottom" id="fbX-eQ-5Py"/>
-                            <constraint firstItem="aMB-43-pPe" firstAttribute="leading" secondItem="jDJ-4J-QFS" secondAttribute="leading" id="uSb-YR-c7Q"/>
-                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Gas Mileage" id="dIQ-pU-Lqb">
                         <barButtonItem key="leftBarButtonItem" title="Garage" id="esc-nj-lfe">
                             <connections>
                                 <segue destination="yYj-7r-03g" kind="push" id="vx6-c3-auF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="uSG-dY-sgj">
+                            <connections>
+                                <segue destination="Udv-kP-Pbw" kind="presentation" id="aDi-RR-ZcV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -468,6 +467,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMe-Bw-Bv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3268" y="538"/>
+        </scene>
+        <!--Gas Fillup-->
+        <scene sceneID="VIa-GL-U4f">
+            <objects>
+                <viewController id="xGY-7M-WKu" customClass="AddGasFillupViewController" customModule="CarKeeper1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H3x-4f-8Jo"/>
+                        <viewControllerLayoutGuide type="bottom" id="wLc-77-9tB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tX4-5Z-yAf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LM-6g-F7l">
+                                <rect key="frame" x="139" y="101" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Odometer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUY-uy-TqW">
+                                <rect key="frame" x="139" y="162" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9l-7H-bsq">
+                                <rect key="frame" x="139" y="222" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sy2-6I-opC">
+                                <rect key="frame" x="289" y="153" width="172" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ef6-un-1s3">
+                                <rect key="frame" x="289" y="213" width="172" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jof-d3-3vJ">
+                                <rect key="frame" x="289" y="92" width="172" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Gas Fillup" id="Whu-Ti-bhI">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0ap-Or-1wt"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="WDr-A9-kUK"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="DateTextField" destination="Jof-d3-3vJ" id="Qg8-1k-P74"/>
+                        <outlet property="OdometerTextField" destination="Sy2-6I-opC" id="aDB-4D-eKc"/>
+                        <outlet property="Save" destination="WDr-A9-kUK" id="6bF-Au-C3h"/>
+                        <outlet property="TotalCostTextField" destination="ef6-un-1s3" id="bIF-P6-dYw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dmm-up-Ayv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4080" y="1294"/>
         </scene>
         <!--Storage-->
         <scene sceneID="zaJ-Hi-bEA">
@@ -642,6 +704,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wbe-SV-OCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2496" y="538"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="40E-Hp-YSD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Udv-kP-Pbw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rei-uy-ZdF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xGY-7M-WKu" kind="relationship" relationship="rootViewController" id="K42-ly-8bR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DNf-pq-H0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3268" y="1294"/>
         </scene>
     </scenes>
     <resources>
