@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rl0-ga-Erb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rl0-ga-Erb">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--AddRecords-->
@@ -218,7 +218,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="crD-jr-iA0" id="eMD-7z-DIk">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ferrari.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jkW-Pz-Ikv">
@@ -269,9 +269,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="wLa-8T-RmH" kind="relationship" relationship="viewControllers" id="h4Q-Gm-rw9"/>
                         <segue destination="wKO-DE-n1D" kind="relationship" relationship="viewControllers" id="ifj-Al-OJM"/>
                         <segue destination="k6B-Qb-fbr" kind="relationship" relationship="viewControllers" id="j9O-kw-SZZ"/>
+                        <segue destination="Lzh-62-aHh" kind="relationship" relationship="viewControllers" id="t2V-Uy-Veg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -327,7 +327,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1af-18-jRa" id="f2t-s0-jH3">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOa-r8-YMi">
@@ -356,6 +356,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Maintenance Reminders" id="jib-uu-Cwk">
+                        <barButtonItem key="leftBarButtonItem" title="Garage" id="0lg-zd-jZS">
+                            <connections>
+                                <segue destination="yYj-7r-03g" kind="push" id="jPt-gA-gqd"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="x7V-gb-grm">
                             <connections>
                                 <segue destination="B9l-CT-se0" kind="presentation" id="rzf-M8-c9t"/>
@@ -392,25 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Td4-8s-qA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4274" y="532"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ky1-VJ-ezM">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xgy-9l-QrI" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Thg-jq-nW7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="FXo-LE-BR2" kind="relationship" relationship="rootViewController" id="86u-Ep-HBx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BKs-u0-1Gq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3438" y="532"/>
+            <point key="canvasLocation" x="5086" y="532"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Ux-wG-6kg">
@@ -468,6 +455,31 @@
             </objects>
             <point key="canvasLocation" x="2777" y="-358"/>
         </scene>
+        <!--Gas Mileage-->
+        <scene sceneID="nTQ-fV-duV">
+            <objects>
+                <viewController id="wA8-1s-eNp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rbh-0x-f9f"/>
+                        <viewControllerLayoutGuide type="bottom" id="l4p-br-kMv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jDJ-4J-QFS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Gas Mileage" id="dIQ-pU-Lqb">
+                        <barButtonItem key="leftBarButtonItem" title="Garage" id="esc-nj-lfe">
+                            <connections>
+                                <segue destination="yYj-7r-03g" kind="push" id="vx6-c3-auF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hMe-Bw-Bv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3268" y="538"/>
+        </scene>
         <!--Storage-->
         <scene sceneID="zaJ-Hi-bEA">
             <objects>
@@ -481,7 +493,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vbi-JN-Bf6" id="E3V-zb-Jqh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -492,6 +504,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Storage" id="UK1-Tb-sK2">
+                        <barButtonItem key="leftBarButtonItem" title="Garage" id="t4d-gK-lBx">
+                            <connections>
+                                <segue destination="yYj-7r-03g" kind="push" id="aKt-zP-N3J"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sNF-2B-rte">
                             <connections>
                                 <segue destination="unR-3I-pcc" kind="presentation" id="a93-6e-kzF"/>
@@ -502,60 +519,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJO-PD-g9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3596" y="-358"/>
-        </scene>
-        <!--Gas Mileage-->
-        <scene sceneID="hWX-aV-YBs">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wLa-8T-RmH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Gas Mileage" image="gas_station" selectedImage="check-engine-light-1" id="MpC-RC-15T"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="COF-by-mTC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="j2a-Ri-wkE" kind="relationship" relationship="rootViewController" id="spb-n9-Kzg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AfN-Ge-tVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1946" y="521"/>
-        </scene>
-        <!--Gas Mileage-->
-        <scene sceneID="FBh-3Q-UH5">
-            <objects>
-                <tableViewController id="j2a-Ri-wkE" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iWK-ze-G3G">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yRs-oP-22N">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yRs-oP-22N" id="vm1-rN-IOS">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="j2a-Ri-wkE" id="j3L-a9-i9I"/>
-                            <outlet property="delegate" destination="j2a-Ri-wkE" id="3zj-Fa-dQQ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Gas Mileage" id="xQg-nC-oqx">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rqZ-gV-Oot">
-                            <connections>
-                                <segue destination="xgy-9l-QrI" kind="presentation" id="od4-20-zNs"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Uv-Rd-d8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2690" y="526"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="whM-PL-Iqa">
@@ -672,6 +635,25 @@
             </objects>
             <point key="canvasLocation" x="4246" y="-1210"/>
         </scene>
+        <!--Gas Mileage-->
+        <scene sceneID="JRQ-jF-voA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lzh-62-aHh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Gas Mileage" image="gas_station" id="Dql-fU-tdR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dDP-wb-zHB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wA8-1s-eNp" kind="relationship" relationship="rootViewController" id="Rji-T9-lIW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wbe-SV-OCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2496" y="538"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Ferrari.jpg" width="800" height="531"/>
@@ -680,4 +662,7 @@
         <image name="gas_station" width="25" height="25"/>
         <image name="sedan-512" width="512" height="307"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jPt-gA-gqd"/>
+    </inferredMetricsTieBreakers>
 </document>
