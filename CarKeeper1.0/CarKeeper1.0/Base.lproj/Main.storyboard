@@ -372,33 +372,6 @@
             </objects>
             <point key="canvasLocation" x="2800" y="-1204"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="i8A-MP-9QG">
-            <objects>
-                <viewController id="FXo-LE-BR2" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rFq-xf-6fW"/>
-                        <viewControllerLayoutGuide type="bottom" id="4Lb-Fz-WQQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4RA-XC-DJt">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Gas Mileage Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCI-WR-EyV">
-                                <rect key="frame" x="130" y="135" width="191" height="267"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="rr4-Pr-zdJ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Td4-8s-qA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5086" y="532"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Ux-wG-6kg">
             <objects>
@@ -458,16 +431,29 @@
         <!--Gas Mileage-->
         <scene sceneID="nTQ-fV-duV">
             <objects>
-                <viewController id="wA8-1s-eNp" sceneMemberID="viewController">
+                <viewController id="wA8-1s-eNp" customClass="GasMileageViewController" customModule="CarKeeper1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rbh-0x-f9f"/>
                         <viewControllerLayoutGuide type="bottom" id="l4p-br-kMv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jDJ-4J-QFS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMB-43-pPe" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l4p-br-kMv" firstAttribute="top" secondItem="aMB-43-pPe" secondAttribute="bottom" id="Dve-3N-e1b"/>
+                            <constraint firstAttribute="trailing" secondItem="aMB-43-pPe" secondAttribute="trailing" id="Hzy-ZE-pR1"/>
+                            <constraint firstItem="aMB-43-pPe" firstAttribute="top" secondItem="Rbh-0x-f9f" secondAttribute="bottom" id="fbX-eQ-5Py"/>
+                            <constraint firstItem="aMB-43-pPe" firstAttribute="leading" secondItem="jDJ-4J-QFS" secondAttribute="leading" id="uSb-YR-c7Q"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Gas Mileage" id="dIQ-pU-Lqb">
                         <barButtonItem key="leftBarButtonItem" title="Garage" id="esc-nj-lfe">
                             <connections>
@@ -475,6 +461,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="barChartView" destination="aMB-43-pPe" id="I3j-tR-a8g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMe-Bw-Bv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -663,6 +652,6 @@
         <image name="sedan-512" width="512" height="307"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jPt-gA-gqd"/>
+        <segue reference="vx6-c3-auF"/>
     </inferredMetricsTieBreakers>
 </document>

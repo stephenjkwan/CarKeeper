@@ -15,6 +15,9 @@
 		22D655C11C9D1D3300F06E00 /* CarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */; };
 		22D655C31C9D1DD200F06E00 /* MyCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C21C9D1DD200F06E00 /* MyCars.swift */; };
 		22D655C51CA1B93500F06E00 /* AddCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C41CA1B93500F06E00 /* AddCarViewController.swift */; };
+		AE234A8C1CC2CD1700C21BC7 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE234A851CC2CCB100C21BC7 /* Charts.framework */; };
+		AE234A8D1CC2CD1700C21BC7 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE234A851CC2CCB100C21BC7 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AE234A911CC2CD6E00C21BC7 /* GasMileageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE234A901CC2CD6E00C21BC7 /* GasMileageViewController.swift */; };
 		AEA8F3CA1C822E6500C16E70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8F3C91C822E6500C16E70 /* AppDelegate.swift */; };
 		AEA8F3D11C822E6500C16E70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEA8F3CF1C822E6500C16E70 /* Main.storyboard */; };
 		AEA8F3D31C822E6500C16E70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEA8F3D21C822E6500C16E70 /* Assets.xcassets */; };
@@ -24,6 +27,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AE234A841CC2CCB100C21BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234A7D1CC2CCB100C21BC7 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+		AE234A861CC2CCB100C21BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234A7D1CC2CCB100C21BC7 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
+			remoteInfo = "Charts-TV";
+		};
+		AE234A881CC2CCB100C21BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234A7D1CC2CCB100C21BC7 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65B3F5BF1C7370BE000983D0;
+			remoteInfo = "Charts-OSX";
+		};
+		AE234A8A1CC2CCB100C21BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234A7D1CC2CCB100C21BC7 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteInfo = ChartsTests;
+		};
+		AE234A8E1CC2CD1700C21BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234A7D1CC2CCB100C21BC7 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
 		AEA8F3DD1C822E6500C16E70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEA8F3BE1C822E6500C16E70 /* Project object */;
@@ -40,6 +78,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AE234A4C1CC2B8B400C21BC7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AE234A8D1CC2CD1700C21BC7 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		22B8B7401CBEE7AE00B037C3 /* CreateReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReminderViewController.swift; sourceTree = "<group>"; };
 		22B8B7421CBEEF8B00B037C3 /* MaintenanceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaintenanceTableViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +101,8 @@
 		22D655C01C9D1D3300F06E00 /* CarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewController.swift; sourceTree = "<group>"; };
 		22D655C21C9D1DD200F06E00 /* MyCars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCars.swift; sourceTree = "<group>"; };
 		22D655C41CA1B93500F06E00 /* AddCarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCarViewController.swift; sourceTree = "<group>"; };
+		AE234A7D1CC2CCB100C21BC7 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		AE234A901CC2CD6E00C21BC7 /* GasMileageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasMileageViewController.swift; sourceTree = "<group>"; };
 		AEA8F3C61C822E6500C16E70 /* CarKeeper1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarKeeper1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA8F3C91C822E6500C16E70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AEA8F3D01C822E6500C16E70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE234A8C1CC2CD1700C21BC7 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,9 +153,21 @@
 			name = GarageMenu;
 			sourceTree = "<group>";
 		};
+		AE234A7E1CC2CCB100C21BC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE234A851CC2CCB100C21BC7 /* Charts.framework */,
+				AE234A871CC2CCB100C21BC7 /* Charts.framework */,
+				AE234A891CC2CCB100C21BC7 /* Charts.framework */,
+				AE234A8B1CC2CCB100C21BC7 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AEA8F3BD1C822E6500C16E70 = {
 			isa = PBXGroup;
 			children = (
+				AE234A7D1CC2CCB100C21BC7 /* Charts.xcodeproj */,
 				AEA8F3C81C822E6500C16E70 /* CarKeeper1.0 */,
 				AEA8F3DF1C822E6500C16E70 /* CarKeeper1.0Tests */,
 				AEA8F3EA1C822E6500C16E70 /* CarKeeper1.0UITests */,
@@ -128,6 +195,7 @@
 				AEA8F3D71C822E6500C16E70 /* Info.plist */,
 				AEA8F3D41C822E6500C16E70 /* LaunchScreen.storyboard */,
 				AEA8F3CF1C822E6500C16E70 /* Main.storyboard */,
+				AE234A901CC2CD6E00C21BC7 /* GasMileageViewController.swift */,
 				22B8B7441CBEEF9E00B037C3 /* MaintenanceTableViewCell.swift */,
 				22B8B7421CBEEF8B00B037C3 /* MaintenanceTableViewController.swift */,
 				22D655C21C9D1DD200F06E00 /* MyCars.swift */,
@@ -164,10 +232,12 @@
 				AEA8F3C21C822E6500C16E70 /* Sources */,
 				AEA8F3C31C822E6500C16E70 /* Frameworks */,
 				AEA8F3C41C822E6500C16E70 /* Resources */,
+				AE234A4C1CC2B8B400C21BC7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AE234A8F1CC2CD1700C21BC7 /* PBXTargetDependency */,
 			);
 			name = CarKeeper1.0;
 			productName = CarKeeper1.0;
@@ -245,6 +315,12 @@
 			mainGroup = AEA8F3BD1C822E6500C16E70;
 			productRefGroup = AEA8F3C71C822E6500C16E70 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AE234A7E1CC2CCB100C21BC7 /* Products */;
+					ProjectRef = AE234A7D1CC2CCB100C21BC7 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AEA8F3C51C822E6500C16E70 /* CarKeeper1.0 */,
@@ -253,6 +329,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AE234A851CC2CCB100C21BC7 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = AE234A841CC2CCB100C21BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE234A871CC2CCB100C21BC7 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = AE234A861CC2CCB100C21BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE234A891CC2CCB100C21BC7 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = AE234A881CC2CCB100C21BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE234A8B1CC2CCB100C21BC7 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = AE234A8A1CC2CCB100C21BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AEA8F3C41C822E6500C16E70 /* Resources */ = {
@@ -289,6 +396,7 @@
 				22D655C11C9D1D3300F06E00 /* CarTableViewController.swift in Sources */,
 				AEA8F3CA1C822E6500C16E70 /* AppDelegate.swift in Sources */,
 				22D655BD1C9D193D00F06E00 /* CarTableViewCell.swift in Sources */,
+				AE234A911CC2CD6E00C21BC7 /* GasMileageViewController.swift in Sources */,
 				22B8B7471CBEF65900B037C3 /* MyReminders.swift in Sources */,
 				22D655C51CA1B93500F06E00 /* AddCarViewController.swift in Sources */,
 				22B8B7451CBEEF9E00B037C3 /* MaintenanceTableViewCell.swift in Sources */,
@@ -317,6 +425,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AE234A8F1CC2CD1700C21BC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Charts-iOS";
+			targetProxy = AE234A8E1CC2CD1700C21BC7 /* PBXContainerItemProxy */;
+		};
 		AEA8F3DE1C822E6500C16E70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AEA8F3C51C822E6500C16E70 /* CarKeeper1.0 */;
@@ -436,6 +549,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CarKeeper1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alto.CarKeeper1-0";
@@ -450,6 +564,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CarKeeper1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alto.CarKeeper1-0";
