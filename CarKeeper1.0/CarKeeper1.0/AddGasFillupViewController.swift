@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddGasFillupViewController: UIViewController {
+class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var Save: UIBarButtonItem!
     @IBOutlet weak var DateTextField: UITextField!
     @IBOutlet weak var OdometerTextField: UITextField!
@@ -17,4 +17,5 @@ class AddGasFillupViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    
 }
