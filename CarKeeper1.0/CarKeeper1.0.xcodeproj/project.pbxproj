@@ -107,6 +107,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2268CB1D1CC435270018405F /* MaintenanceReminders */ = {
+			isa = PBXGroup;
+			children = (
+				22B8B7401CBEE7AE00B037C3 /* CreateReminderViewController.swift */,
+				22B8B7421CBEEF8B00B037C3 /* MaintenanceTableViewController.swift */,
+				22B8B7441CBEEF9E00B037C3 /* MaintenanceTableViewCell.swift */,
+			);
+			name = MaintenanceReminders;
+			sourceTree = "<group>";
+		};
 		AE234A361CC2B42B00C21BC7 /* GarageMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,16 +160,14 @@
 			isa = PBXGroup;
 			children = (
 				AEA8F3C91C822E6500C16E70 /* AppDelegate.swift */,
-				AE234A361CC2B42B00C21BC7 /* GarageMenu */,
-				AE234A961CC2E35C00C21BC7 /* GasMileageTab */,
 				AEA8F3D21C822E6500C16E70 /* Assets.xcassets */,
-				22B8B7401CBEE7AE00B037C3 /* CreateReminderViewController.swift */,
+				AE234A361CC2B42B00C21BC7 /* GarageMenu */,
+				AE234A921CC2DEA500C21BC7 /* GasFillup.swift */,
+				AE234A961CC2E35C00C21BC7 /* GasMileageTab */,
 				AEA8F3D71C822E6500C16E70 /* Info.plist */,
 				AEA8F3D41C822E6500C16E70 /* LaunchScreen.storyboard */,
 				AEA8F3CF1C822E6500C16E70 /* Main.storyboard */,
-				AE234A921CC2DEA500C21BC7 /* GasFillup.swift */,
-				22B8B7441CBEEF9E00B037C3 /* MaintenanceTableViewCell.swift */,
-				22B8B7421CBEEF8B00B037C3 /* MaintenanceTableViewController.swift */,
+				2268CB1D1CC435270018405F /* MaintenanceReminders */,
 				22D655C21C9D1DD200F06E00 /* MyCars.swift */,
 				22B8B7461CBEF65900B037C3 /* MyReminders.swift */,
 			);

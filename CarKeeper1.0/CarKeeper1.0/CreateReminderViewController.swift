@@ -7,6 +7,7 @@
 //
 
 import UIKit
+var nDate = NSDate()
 
 class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate{
     
@@ -44,7 +45,16 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
             
             Reminder = MyReminders(date: datelabel!,reminderDetail: reminderLabel!)
             
-        }
+            let localNotification = UILocalNotification()
+            localNotification.alertTitle = "CarKeeper"
+            localNotification.alertBody = reminderLabel
+            localNotification.alertAction = "ShowDetails"
+            localNotification.fireDate = nDate
+            localNotification.timeZone = NSTimeZone.defaultTimeZone()
+            localNotification.soundName = UILocalNotificationDefaultSoundName
+            localNotification.applicationIconBadgeNumber = 1
+            //localNotification.category = "reminderCategory"
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)         }
     }
     
     // Cancel button
@@ -67,6 +77,7 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
         dateHandler.dateStyle = NSDateFormatterStyle.MediumStyle
         dateHandler.timeStyle = NSDateFormatterStyle.NoStyle
         DateTextField.text = dateHandler.stringFromDate(sender.date)
+        nDate = sender.date
     }
     /**** Ened of editing text field for dates **/
     
