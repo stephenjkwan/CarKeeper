@@ -653,6 +653,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rm-20-grV">
+                                <rect key="frame" x="187" y="433" width="210" height="30"/>
+                                <state key="normal" title="Delete Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -670,6 +674,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="DateTextField" destination="ZAJ-6w-kt7" id="vqc-uR-cF9"/>
+                        <outlet property="DeleteButton" destination="3rm-20-grV" id="fYR-Tp-gnh"/>
                         <outlet property="MileageTextField" destination="8Dr-EA-DBh" id="wXf-CN-gGz"/>
                         <outlet property="MonthTextField" destination="dKq-XK-0yy" id="G3C-He-jQ7"/>
                         <outlet property="ReminderTextField" destination="4Qj-o0-FfD" id="G9L-ce-Rsk"/>

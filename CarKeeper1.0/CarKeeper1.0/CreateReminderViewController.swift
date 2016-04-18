@@ -16,6 +16,7 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
     @IBOutlet weak var MileageTextField: UITextField!
     @IBOutlet weak var DateTextField: UITextField!
     @IBOutlet weak var SaveButton: UIBarButtonItem!
+    @IBOutlet weak var DeleteButton: UIButton!
     
     var Reminder: MyReminders?
     
@@ -25,9 +26,11 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
         MonthTextField.delegate = self
         MileageTextField.delegate=self
         DateTextField.delegate=self
+        DeleteButton.hidden = true
         
         //setup views if editing a reminder
         if let Reminder = Reminder{
+            DeleteButton.hidden = false
             navigationItem.title = "Edit Reminder"
             ReminderTextField.text = Reminder.reminderDetail
             DateTextField.text = Reminder.date
@@ -72,11 +75,14 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
     // Cancel button
     @IBAction func CancelAdd(sender: UIBarButtonItem) {
         let isPresentingInReminderMode = presentingViewController is UINavigationController
+        
+        // if its in push modal segue dismiss view
         if isPresentingInReminderMode == false{
             print ("trying to dismiss add view")
             dismissViewControllerAnimated(true, completion: nil)
             print ("dismiss sucessful in add view")
         }
+        // if show segue dismiss view
         else if isPresentingInReminderMode == true {
             print ("trying to dismiss edit view")
             self.navigationController?.popViewControllerAnimated(true)
