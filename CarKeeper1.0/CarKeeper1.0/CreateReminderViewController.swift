@@ -71,7 +71,17 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
     
     // Cancel button
     @IBAction func CancelAdd(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        let isPresentingInReminderMode = presentingViewController is UINavigationController
+        if isPresentingInReminderMode == false{
+            print ("trying to dismiss add view")
+            dismissViewControllerAnimated(true, completion: nil)
+            print ("dismiss sucessful in add view")
+        }
+        else if isPresentingInReminderMode == true {
+            print ("trying to dismiss edit view")
+            self.navigationController?.popViewControllerAnimated(true)
+            print ("dismiss sucessful in edit view")
+        }
     }
     
     
