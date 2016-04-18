@@ -39,9 +39,17 @@ class MaintenanceTableViewController: UITableViewController {
     }
     @IBAction func unwindToReminderList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? CreateReminderViewController, Reminder = sourceViewController.Reminder{
+            // allows for edited view to be changed
+            if let selectedIndexPath = tableView.indexPathForSelectedRow{
+                newReminder[selectedIndexPath.row] = Reminder
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+            }
+            else {
+            // creates new reminder
             let newIndexPath = NSIndexPath(forRow: newReminder.count, inSection: 0)
             newReminder.append(Reminder)
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            }
         }
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -92,7 +100,8 @@ class MaintenanceTableViewController: UITableViewController {
 
     
     // MARK: - Navigation
-
+    
+    // allows for editing existing tablecell
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showReminder"{
