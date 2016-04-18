@@ -26,7 +26,15 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
         MileageTextField.delegate=self
         DateTextField.delegate=self
         
-
+        //setup views if editing a reminder
+        if let Reminder = Reminder{
+            navigationItem.title = "Edit Reminder"
+            ReminderTextField.text = Reminder.reminderDetail
+            DateTextField.text = Reminder.date
+        }
+        
+        //checkValidReminder()
+        
         // Do any additional setup after loading the view.
     }
 /*
@@ -35,9 +43,13 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
         // Dispose of any resources that can be recreated.
     }
  */
-    
-    
-    
+   /*
+    func checkValidReminder() {
+        // Disable the Save button if the text field is empty.
+        let text = ReminderTextField.text ?? ""
+        SaveButton.enabled = !text.isEmpty
+    }
+    */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if SaveButton === sender{
             let reminderLabel = ReminderTextField.text

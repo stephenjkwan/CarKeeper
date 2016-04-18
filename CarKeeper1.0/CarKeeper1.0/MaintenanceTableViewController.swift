@@ -90,14 +90,27 @@ class MaintenanceTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showReminder"{
+            let showReminderView = segue.destinationViewController as! CreateReminderViewController
+            if let maintenceViewCell = sender as? MaintenanceTableViewCell{
+                let indexPath = tableView.indexPathForCell(maintenceViewCell)!
+                let selectedReminder = newReminder[indexPath.row]
+                showReminderView.Reminder = selectedReminder
+            }
+            
+        }
+        else if segue.identifier == "AddReminder"{
+            print ("adding new reminder")
+        }
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }
