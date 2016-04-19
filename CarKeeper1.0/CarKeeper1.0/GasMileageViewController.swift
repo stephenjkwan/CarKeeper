@@ -15,10 +15,15 @@ and learned how to include these source files through this stack overflow write 
 class GasMileageViewController: UIViewController {
     //let calendar = NSCalendar.currentCalendar()
     //@IBOutlet weak var barChartView: BarChartView!
+    var CurrentCar:MyCars?
     override func viewDidLoad() {
+        //self.tabBarController looks for the nearest tab bar controller which contains our Current Car
+        let TabBar = self.tabBarController as! TabBarController
+        CurrentCar = TabBar.CurrentCar
+        print(CurrentCar!.CarName)
         super.viewDidLoad()
-       // barChartView.noDataText = "No Data Provided"
+        // barChartView.noDataText = "No Data Provided"
     }
     
-
+    
 }

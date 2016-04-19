@@ -86,6 +86,18 @@ class CarTableViewController: UITableViewController {
         //save the Cars
         saveCars()
     }
+    //This function sends the Car that was selected to the next tab view controller
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let selectedCarCell = sender as? CarTableViewCell{
+            let indexPath = tableView.indexPathForCell(selectedCarCell)
+            let selectedCar = carArray[indexPath!.row]
+            let TabViewController = segue.destinationViewController as! TabBarController
+            print(selectedCar.CarName)
+            TabViewController.CurrentCar = selectedCar
+            
+        }
+    }
+
     //MARK NSCODING
     //function to archive car array to a specific location. isSuccessfulSave retruns true if it saved successfully
     func saveCars(){
