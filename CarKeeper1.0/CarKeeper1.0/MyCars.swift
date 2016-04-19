@@ -33,6 +33,11 @@ class MyCars : NSObject, NSCoding {
         super.init()
     }
     
+    func ChangeCarName(newName: String){
+        self.CarName = newName
+    }
+
+    
     //MARK: NSCODING
     //function that encodes the data to be archived
     func encodeWithCoder(aCoder: NSCoder) {
@@ -41,6 +46,7 @@ class MyCars : NSObject, NSCoding {
         aCoder.encodeObject(TotalMileage, forKey: PropertyKey.mileageKey)
         //aCoder.encodeObject(Fillups, forKey: PropertyKey.gasDictionaryKey)
     }
+    
     
     //The required keyword means this initializer must be implemented on every subclass of the class that defines this initializer. Convenience denotes convenience intializer. The question mark (?) means that this is a failable initializer that might return nil.
     //decodes  the encoded data and initialize an instance using this information

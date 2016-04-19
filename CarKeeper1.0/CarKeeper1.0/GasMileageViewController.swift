@@ -16,6 +16,11 @@ class GasMileageViewController: UIViewController {
     //let calendar = NSCalendar.currentCalendar()
     //@IBOutlet weak var barChartView: BarChartView!
     var CurrentCar:MyCars?
+        @IBAction func ChangeName(sender: AnyObject) {
+            CurrentCar!.ChangeCarName("Testing")
+            print(CurrentCar!.CarName)
+        
+    }
     override func viewDidLoad() {
         //self.tabBarController looks for the nearest tab bar controller which contains our Current Car
         let TabBar = self.tabBarController as! TabBarController

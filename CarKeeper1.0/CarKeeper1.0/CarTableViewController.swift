@@ -9,9 +9,7 @@
 import UIKit
 
 class CarTableViewController: UITableViewController {
-
     var carArray = [MyCars]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //use the edit button provided by the table view controller
