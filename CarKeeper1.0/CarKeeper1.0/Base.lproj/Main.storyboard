@@ -659,6 +659,9 @@
                                 <state key="normal" title="Delete">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="A9Q-KJ-rF9" kind="unwind" unwindAction="unwindToReminderList:" id="QYx-kP-3ya"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

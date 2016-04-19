@@ -18,3 +18,11 @@ class MyReminders{
 
     }
 }
+
+class MyDeleteButton{
+    var deleteButtonSelected: BooleanType
+    
+    init?(deleteButtonSelected:BooleanType){
+        self.deleteButtonSelected = deleteButtonSelected
+    }
+}

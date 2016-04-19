@@ -8,7 +8,6 @@
 
 import UIKit
 var nDate = NSDate()
-
 class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate{
     
     @IBOutlet weak var ReminderTextField: UITextField!
@@ -17,7 +16,7 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
     @IBOutlet weak var DateTextField: UITextField!
     @IBOutlet weak var SaveButton: UIBarButtonItem!
     @IBOutlet weak var DeleteButton: UIButton!
-    
+    var delete: MyDeleteButton?
     var Reminder: MyReminders?
     
     override func viewDidLoad() {
@@ -54,6 +53,8 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
     }
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //var badgecount = 0
+        
         if SaveButton === sender{
             let reminderLabel = ReminderTextField.text
             let datelabel = DateTextField.text
@@ -67,9 +68,15 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
             localNotification.fireDate = nDate
             localNotification.timeZone = NSTimeZone.defaultTimeZone()
             localNotification.soundName = UILocalNotificationDefaultSoundName
-            localNotification.applicationIconBadgeNumber = 1
+            localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber+1
             //localNotification.category = "reminderCategory"
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)         }
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        }
+        /*
+        if DeleteButton === sender{
+            delete = MyDeleteButton(deleteButtonSelected: true)
+        }
+        */
     }
     
     // Cancel button
@@ -109,7 +116,7 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
     }
     /**** Ened of editing text field for dates **/
     
-    
+     // Override to support editing the table view.
     
     
     
