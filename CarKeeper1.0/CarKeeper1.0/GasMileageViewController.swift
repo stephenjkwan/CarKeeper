@@ -23,8 +23,9 @@ class GasMileageViewController: UIViewController {
 
             CurrentCar!.CarName = "Changed Car Name!"
             print(CurrentCar!.CarName)
+            //this is how to save the Cars again after editing or adding to the car
             CarStructObj.saveCars()
-            CarStructObj.Cars = CarStructObj.loadCars()!
+            //CarStructObj.Cars = CarStructObj.loadCars()!
             for car in CarStructObj.Cars{
                 print("CarStruct car \(car.CarName)")
             }
@@ -32,7 +33,8 @@ class GasMileageViewController: UIViewController {
         
     }
     override func viewDidLoad() {
-        //self.tabBarController looks for the nearest tab bar controller which contains our Current Car
+        /*self.tabBarController looks for the nearest tab bar controller which contains our Current Car that was selected from the very first table view. The code below is the code to put in your viewDidLoad() to find the current car we are editing.
+        */
         let TabBar = self.tabBarController as! TabBarController
         CurrentCar = TabBar.CurrentCar
         print(CurrentCar!.CarName)

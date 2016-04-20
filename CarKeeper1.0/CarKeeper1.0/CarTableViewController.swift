@@ -7,6 +7,8 @@
 //
 
 import UIKit
+/* CarStruct is a global struct that can be used in all files so that everyone can have access to the Cars array and all will have the ability to save and load the car array from persistant data
+ */
 struct CarStruct {
     var Cars = [MyCars]()
     func saveCars(){
@@ -21,10 +23,18 @@ struct CarStruct {
     }
 
 }
-
+/* so instead of a variable car array in our cartableview controller we have a global struct insatnce called CarStructObj. 
+    NOTE: To save Cars run this command "CarStructObj.saveCars()"
+        To access car that was selected use these following commands
+    " var CurrentCar:MyCars?
+    let TabBar = self.tabBarController as! TabBarController
+    CurrentCar = TabBar.CurrentCar"
+ 
+    Now you can access the selected Car using the variable CurrentCar
+ 
+ */
 var CarStructObj = CarStruct()
 
-//tried to make a struct. worked for a bit.
 
 class CarTableViewController: UITableViewController {
     //var carArray = [MyCars]()
@@ -43,15 +53,6 @@ class CarTableViewController: UITableViewController {
             CarStructObj.Cars = savedCars
             //carArray = CarStructObj.Cars
         }
-        
-         /*       for car in carArray{
-            print("CarArray car \(car.CarName)")
-         
-        }
-         for car in CarStructObj.Cars{
-         print("CarStruct car \(car.CarName)")
-         }*/
-
  
 
     }
