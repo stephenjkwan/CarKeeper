@@ -17,8 +17,13 @@ class GasMileageViewController: UIViewController {
     //@IBOutlet weak var barChartView: BarChartView!
     var CurrentCar:MyCars?
         @IBAction func ChangeName(sender: AnyObject) {
+            for car in CarStructObj.Cars{
+                print(" after segues CarStruct car \(car.CarName)")
+            }
+
             CurrentCar!.ChangeCarName("Testing")
             print(CurrentCar!.CarName)
+            CarStructObj.saveCars()
         
     }
     override func viewDidLoad() {

@@ -7,10 +7,29 @@
 //
 
 import UIKit
+struct CarStruct {
+    var Cars = [MyCars]()
+    func saveCars(){
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(Cars, toFile: MyCars.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("Failed to save Cars...")
+        }
+    }
+    
+    func loadCars()->[MyCars]?{
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(MyCars.ArchiveURL.path!) as? [MyCars]
+    }
+
+}
+
+var CarStructObj = CarStruct()
+
+//tried to make a struct. worked for a bit.
 
 class CarTableViewController: UITableViewController {
     var carArray = [MyCars]()
     override func viewDidLoad() {
+            //view did load is called with any segue to this controller
         super.viewDidLoad()
         //use the edit button provided by the table view controller
         navigationItem.leftBarButtonItem = editButtonItem()
@@ -19,18 +38,21 @@ class CarTableViewController: UITableViewController {
          and execute the if statement, which is array addition... I guess you can do that in swift
          im too used to C where your not allowed to do anything.
             */
-        if let savedCars = loadCars(){
-            carArray += savedCars
+        if let savedCars = CarStructObj.loadCars(){
+            CarStructObj.Cars = savedCars
+            carArray = CarStructObj.Cars
         }
-        //loadCarView()
-    }
-    //func loadCarView(){
-        //let CarImage = UIImage(named: "Ferrari.jpg")!
-        //let CarView = MyCars(CarName: "Ferrari 458", CarPhoto: CarImage)!
-       // carArray+=[CarView]
-    //}
+        
+        for car in CarStructObj.Cars{
+            print("CarStruct car \(car.CarName)")
+        }
+        for car in carArray{
+            print("CarArray car \(car.CarName)")
+        }
 
-    override func didReceiveMemoryWarning() {
+    }
+    
+       override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
@@ -45,7 +67,7 @@ class CarTableViewController: UITableViewController {
             // Delete the row from the car array
             carArray.removeAtIndex(indexPath.row)
             //save the cars whenver an instance of the cars is deleted
-            saveCars()
+            CarStructObj.saveCars()
             //deletes from the table view
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert{
@@ -82,7 +104,7 @@ class CarTableViewController: UITableViewController {
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
         }
         //save the Cars
-        saveCars()
+        CarStructObj.saveCars()
     }
     //This function sends the Car that was selected to the next tab view controller
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -98,16 +120,6 @@ class CarTableViewController: UITableViewController {
 
     //MARK NSCODING
     //function to archive car array to a specific location. isSuccessfulSave retruns true if it saved successfully
-    func saveCars(){
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(carArray, toFile: MyCars.ArchiveURL.path!)
-        if !isSuccessfulSave {
-            print("Failed to save Cars...")
-        }
-    }
-    //function loads cars from the archive we previously stored the car array to our carArray
-    func loadCars()->[MyCars]?{
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(MyCars.ArchiveURL.path!) as? [MyCars]
-    }
-    
+        //function loads cars from the archive we previously stored the car array to our carArray
     
 }
