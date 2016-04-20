@@ -16,7 +16,9 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
     @IBOutlet weak var DateTextField: UITextField!
     @IBOutlet weak var SaveButton: UIBarButtonItem!
     @IBOutlet weak var DeleteButton: UIButton!
-    var delete: MyDeleteButton?
+    @IBOutlet weak var CommentsTextField: UITextField!
+    
+    //var delete: MyDeleteButton?
     var Reminder: MyReminders?
     
     override func viewDidLoad() {
@@ -25,6 +27,7 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
         MonthTextField.delegate = self
         MileageTextField.delegate=self
         DateTextField.delegate=self
+        CommentsTextField.delegate=self
         DeleteButton.hidden = true
         
         //setup views if editing a reminder
@@ -33,6 +36,7 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
             navigationItem.title = "Edit Reminder"
             ReminderTextField.text = Reminder.reminderDetail
             DateTextField.text = Reminder.date
+            CommentsTextField.text = Reminder.comments
         }
         
         //checkValidReminder()
@@ -59,7 +63,7 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
             let reminderLabel = ReminderTextField.text
             let datelabel = DateTextField.text
             
-            Reminder = MyReminders(date: datelabel!,reminderDetail: reminderLabel!)
+            Reminder = MyReminders(date: datelabel!,reminderDetail: reminderLabel!, comments:CommentsTextField.text! )
             
             let localNotification = UILocalNotification()
             localNotification.alertTitle = "CarKeeper"

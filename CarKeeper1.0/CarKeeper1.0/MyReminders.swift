@@ -11,10 +11,12 @@ import UIKit
 class MyReminders{
     var date: String
     var reminderDetail: String
+    var comments: String
     
-    init?(date: String, reminderDetail: String){
+    init?(date: String, reminderDetail: String, comments: String){
         self.date = date
         self.reminderDetail = reminderDetail
+        self.comments = comments
 
     }
 }

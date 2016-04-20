@@ -33,6 +33,22 @@ class AddRecordsViewController: UIViewController {
         dateOut.text = dateHandler.stringFromDate(sender.date)
     }
     
+    @IBAction func CancelAdd(sender: UIBarButtonItem) {
+        let isPresentingInReminderMode = presentingViewController is UINavigationController
+        
+        // if its in push modal segue dismiss view
+        if isPresentingInReminderMode == false{
+            print ("trying to dismiss add view")
+            dismissViewControllerAnimated(true, completion: nil)
+            print ("dismiss sucessful in add view")
+        }
+            // if show segue dismiss view
+        else if isPresentingInReminderMode == true {
+            print ("trying to dismiss edit view")
+            self.navigationController?.popViewControllerAnimated(true)
+            print ("dismiss sucessful in edit view")
+        }
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "doneSegue" {
