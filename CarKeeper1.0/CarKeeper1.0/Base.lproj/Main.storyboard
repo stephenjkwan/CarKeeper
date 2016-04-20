@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rl0-ga-Erb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rl0-ga-Erb">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--AddRecords-->
         <scene sceneID="7ah-Nt-CSp">
             <objects>
-                <viewController title="AddRecords" id="hA0-7P-1uv" sceneMemberID="viewController">
+                <viewController title="AddRecords" id="hA0-7P-1uv" customClass="AddRecordsViewController" customModule="CarKeeper1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bk5-c8-Ajv"/>
                         <viewControllerLayoutGuide type="bottom" id="e1H-LM-fac"/>
@@ -17,27 +18,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GT7-9V-GnY">
-                                <rect key="frame" x="100" y="229" width="239" height="21"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Records Add">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtt-tU-Sht">
+                                <rect key="frame" x="46" y="55" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p56-4H-Ebx">
+                                <rect key="frame" x="46" y="96" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zgk-iE-ezB">
+                                <rect key="frame" x="108" y="52" width="443" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dateAct:" destination="hA0-7P-1uv" eventType="editingDidBegin" id="bDw-QP-Hj9"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WVl-M5-7y9">
+                                <rect key="frame" x="108" y="87" width="443" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gd1-DK-y1X">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="Cpk-cp-8wX">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3wG-4B-n0B">
+                                            <connections>
+                                                <segue destination="6Ks-Km-0Rd" kind="unwind" identifier="cancelSegue" unwindAction="cancel:" id="5kH-XZ-9Yx"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="fsb-H0-mp8">
+                                            <connections>
+                                                <segue destination="6Ks-Km-0Rd" kind="unwind" identifier="doneSegue" unwindAction="done:" id="8Ie-qo-hVc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p56-4H-Ebx" firstAttribute="bottom" secondItem="WVl-M5-7y9" secondAttribute="bottom" id="4Pt-UR-SAE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zgk-iE-ezB" secondAttribute="trailing" constant="29" id="FiY-3C-nTM"/>
+                            <constraint firstItem="Zgk-iE-ezB" firstAttribute="trailing" secondItem="WVl-M5-7y9" secondAttribute="trailing" id="GmK-4C-aaX"/>
+                            <constraint firstItem="WVl-M5-7y9" firstAttribute="top" secondItem="Zgk-iE-ezB" secondAttribute="bottom" constant="5" id="Lsn-Uu-0Zb"/>
+                            <constraint firstItem="qtt-tU-Sht" firstAttribute="baseline" secondItem="Zgk-iE-ezB" secondAttribute="baseline" id="NWx-ER-Vxb"/>
+                            <constraint firstItem="Zgk-iE-ezB" firstAttribute="top" secondItem="gd1-DK-y1X" secondAttribute="bottom" constant="8" id="UK0-0Y-RTW"/>
+                            <constraint firstItem="gd1-DK-y1X" firstAttribute="leading" secondItem="5XW-eo-hnO" secondAttribute="leading" id="ZEH-6C-ED6"/>
+                            <constraint firstAttribute="trailing" secondItem="gd1-DK-y1X" secondAttribute="trailing" id="cDq-5e-zZk"/>
+                            <constraint firstItem="qtt-tU-Sht" firstAttribute="leading" secondItem="p56-4H-Ebx" secondAttribute="leading" id="dna-ln-2MR"/>
+                            <constraint firstItem="gd1-DK-y1X" firstAttribute="top" secondItem="5XW-eo-hnO" secondAttribute="top" id="kOE-je-VbN"/>
+                            <constraint firstItem="Zgk-iE-ezB" firstAttribute="leading" secondItem="WVl-M5-7y9" secondAttribute="leading" id="sxD-GL-XP8"/>
+                            <constraint firstItem="Zgk-iE-ezB" firstAttribute="leading" secondItem="qtt-tU-Sht" secondAttribute="trailing" constant="26" id="xhg-Ns-qnP"/>
+                            <constraint firstItem="qtt-tU-Sht" firstAttribute="leading" secondItem="5XW-eo-hnO" secondAttribute="leadingMargin" constant="26" id="ync-kL-85p"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ycs-gk-BPa"/>
+                    <connections>
+                        <outlet property="dateOut" destination="Zgk-iE-ezB" id="pnv-vC-62X"/>
+                        <outlet property="taskOut" destination="WVl-M5-7y9" id="Fma-fq-LPG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qz0-05-esA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6Ks-Km-0Rd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5035" y="-396"/>
+            <point key="canvasLocation" x="4315" y="-357"/>
         </scene>
         <!--Add Car-->
         <scene sceneID="Vug-ll-8QH">
@@ -373,24 +423,6 @@
             </objects>
             <point key="canvasLocation" x="2572" y="-1345"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="6Ux-wG-6kg">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="unR-3I-pcc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b7F-Vx-1t6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hA0-7P-1uv" kind="relationship" relationship="rootViewController" id="jDk-D4-cYm"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dGX-Tx-9WF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4283" y="-396"/>
-        </scene>
         <!--Maintenance-->
         <scene sceneID="7Vb-vL-7Dx">
             <objects>
@@ -538,13 +570,13 @@
         <!--Storage-->
         <scene sceneID="zaJ-Hi-bEA">
             <objects>
-                <tableViewController id="ZjR-ft-LOg" sceneMemberID="viewController">
+                <tableViewController id="ZjR-ft-LOg" customClass="RecordsTableViewController" customModule="CarKeeper1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="R16-LS-LiX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vbi-JN-Bf6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recordCell" id="vbi-JN-Bf6">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vbi-JN-Bf6" id="E3V-zb-Jqh">
@@ -566,7 +598,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sNF-2B-rte">
                             <connections>
-                                <segue destination="unR-3I-pcc" kind="presentation" id="a93-6e-kzF"/>
+                                <segue destination="hA0-7P-1uv" kind="presentation" id="0rm-L9-jA6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -747,7 +779,7 @@
         <image name="sedan-512" width="512" height="307"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TdP-Ti-cKe"/>
+        <segue reference="Its-iZ-bjB"/>
         <segue reference="8MD-Lh-dam"/>
     </inferredMetricsTieBreakers>
 </document>
