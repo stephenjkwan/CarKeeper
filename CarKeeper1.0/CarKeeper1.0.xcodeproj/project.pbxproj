@@ -165,20 +165,20 @@
 		AEA8F3C81C822E6500C16E70 /* CarKeeper1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				35A43F2C1CC70C9A00711811 /* AddRecordsViewController.swift */,
 				AEA8F3C91C822E6500C16E70 /* AppDelegate.swift */,
 				AEA8F3D21C822E6500C16E70 /* Assets.xcassets */,
 				AE234A361CC2B42B00C21BC7 /* GarageMenu */,
 				AE234A921CC2DEA500C21BC7 /* GasFillup.swift */,
-				22D655C21C9D1DD200F06E00 /* MyCars.swift */,
-				22B8B7461CBEF65900B037C3 /* MyReminders.swift */,
-				AE73B5481CC5E95B008D91B9 /* TabBarController.swift */,
-				35A43F2C1CC70C9A00711811 /* AddRecordsViewController.swift */,
 				AE234A961CC2E35C00C21BC7 /* GasMileageTab */,
 				AEA8F3D71C822E6500C16E70 /* Info.plist */,
 				AEA8F3D41C822E6500C16E70 /* LaunchScreen.storyboard */,
 				AEA8F3CF1C822E6500C16E70 /* Main.storyboard */,
-				35A43F2E1CC70DF700711811 /* RecordsTableViewController.swift */,
 				2268CB1D1CC435270018405F /* MaintenanceReminders */,
+				22D655C21C9D1DD200F06E00 /* MyCars.swift */,
+				22B8B7461CBEF65900B037C3 /* MyReminders.swift */,
+				35A43F2E1CC70DF700711811 /* RecordsTableViewController.swift */,
+				AE73B5481CC5E95B008D91B9 /* TabBarController.swift */,
 			);
 			path = CarKeeper1.0;
 			sourceTree = "<group>";
