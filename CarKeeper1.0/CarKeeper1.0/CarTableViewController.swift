@@ -27,7 +27,7 @@ var CarStructObj = CarStruct()
 //tried to make a struct. worked for a bit.
 
 class CarTableViewController: UITableViewController {
-    var carArray = [MyCars]()
+    //var carArray = [MyCars]()
     override func viewDidLoad() {
             //view did load is called with any segue to this controller
         super.viewDidLoad()
@@ -38,17 +38,21 @@ class CarTableViewController: UITableViewController {
          and execute the if statement, which is array addition... I guess you can do that in swift
          im too used to C where your not allowed to do anything.
             */
+        print("in viewdidload()")
         if let savedCars = CarStructObj.loadCars(){
             CarStructObj.Cars = savedCars
-            carArray = CarStructObj.Cars
+            //carArray = CarStructObj.Cars
         }
         
-        for car in CarStructObj.Cars{
-            print("CarStruct car \(car.CarName)")
-        }
-        for car in carArray{
+         /*       for car in carArray{
             print("CarArray car \(car.CarName)")
+         
         }
+         for car in CarStructObj.Cars{
+         print("CarStruct car \(car.CarName)")
+         }*/
+
+ 
 
     }
     
@@ -65,7 +69,9 @@ class CarTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if editingStyle == .Delete{
             // Delete the row from the car array
-            carArray.removeAtIndex(indexPath.row)
+            //carArray.removeAtIndex(indexPath.row)
+            CarStructObj.Cars.removeAtIndex(indexPath.row)
+
             //save the cars whenver an instance of the cars is deleted
             CarStructObj.saveCars()
             //deletes from the table view
@@ -81,7 +87,7 @@ class CarTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return carArray.count
+            return CarStructObj.Cars.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
@@ -89,7 +95,7 @@ class CarTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CarTableViewCell
         
         // Fetches the appropriate car for the data source layout.
-        let temp = carArray[indexPath.row]
+        let temp = CarStructObj.Cars[indexPath.row]
         
         cell.CarNameLabel.text = temp.CarName
         cell.CarImage.image = temp.CarPhoto
@@ -99,18 +105,19 @@ class CarTableViewController: UITableViewController {
     @IBAction func unwindToCarList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? AddCarViewController, Cars = sourceViewController.Cars{
             // Add a new car item.
-            let newIndexPath = NSIndexPath(forRow: carArray.count, inSection: 0)
-            carArray.append(Cars)
+            let newIndexPath = NSIndexPath(forRow: CarStructObj.Cars.count, inSection: 0)
+            CarStructObj.Cars.append(Cars)
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
         }
         //save the Cars
         CarStructObj.saveCars()
+       
     }
     //This function sends the Car that was selected to the next tab view controller
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let selectedCarCell = sender as? CarTableViewCell{
             let indexPath = tableView.indexPathForCell(selectedCarCell)
-            let selectedCar = carArray[indexPath!.row]
+            let selectedCar = CarStructObj.Cars[indexPath!.row]
             let TabViewController = segue.destinationViewController as! TabBarController
             print(selectedCar.CarName)
             TabViewController.CurrentCar = selectedCar

@@ -21,9 +21,14 @@ class GasMileageViewController: UIViewController {
                 print(" after segues CarStruct car \(car.CarName)")
             }
 
-            CurrentCar!.ChangeCarName("Testing")
+            CurrentCar!.CarName = "Changed Car Name!"
             print(CurrentCar!.CarName)
             CarStructObj.saveCars()
+            CarStructObj.Cars = CarStructObj.loadCars()!
+            for car in CarStructObj.Cars{
+                print("CarStruct car \(car.CarName)")
+            }
+
         
     }
     override func viewDidLoad() {

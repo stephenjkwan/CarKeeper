@@ -33,11 +33,6 @@ class MyCars : NSObject, NSCoding {
         super.init()
     }
     
-    func ChangeCarName(newName: String){
-        self.CarName = newName
-    }
-
-    
     //MARK: NSCODING
     //function that encodes the data to be archived
     func encodeWithCoder(aCoder: NSCoder) {
