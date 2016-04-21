@@ -49,10 +49,21 @@ class CarTableViewController: UITableViewController {
          im too used to C where your not allowed to do anything.
             */
         print("in viewdidload()")
+        print("test")
+        
+
         if let savedCars = CarStructObj.loadCars(){
             CarStructObj.Cars = savedCars
             //carArray = CarStructObj.Cars
         }
+        print("in viewdidload()")
+        for car in CarStructObj.Cars{
+            for fillup in car.Fillups {
+                print("date: \(fillup.0) odometer:\(fillup.1.odometer!) TotalCost: \(fillup.1.totalCost!)")
+            }
+
+        }
+
  
 
     }

@@ -52,9 +52,9 @@ class AddCarViewController: UIViewController,UIImagePickerControllerDelegate, UI
             let CarName = FullCarName ?? ""
             let CarPhoto = DefaultImageView.image
             let GasMileage = Int(CarMileageTextField.text!)
-            
+            let Fillups = [NSDate:GasFillup]()
             // Set the Car to be passed to CartTableViewController after the unwind segue.
-            Cars = MyCars(CarName: CarName, CarPhoto: CarPhoto, TotalMileage: GasMileage)
+            Cars = MyCars(CarName: CarName, CarPhoto: CarPhoto, TotalMileage: GasMileage, Fillups: Fillups )
         }
     }
     //Actions

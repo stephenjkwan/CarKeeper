@@ -18,18 +18,23 @@ class MyCars : NSObject, NSCoding {
      Fillups is a dictionary where the key is the date of the fillup and the value is another class
      which includes the total cost of the fillup and the odometer.
      */
-    //var Fillups = [NSDate:GasFillup]()
+    var Fillups : [NSDate:GasFillup]
     
     //MARK: Archive Paths we use to store and retrieve data.
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("cars")
     
-    init?(CarName: String, CarPhoto: UIImage?, TotalMileage: Int?){ //Fillups: [NSDate:GasFillup]){
+    init?(CarName: String, CarPhoto: UIImage?, TotalMileage: Int?, Fillups: [NSDate:GasFillup]){
+        print("in init where i create an empty gas fillup")
         self.CarName = CarName
         self.CarPhoto = CarPhoto
         self.TotalMileage = TotalMileage
-        //self.Fillups = Fillups
-        //not really sure why but need to call superclass initializer
+        //need to check when to create an emptyp dictionary or not
+        print(Fillups)
+              /* if Fillups.count = 0{
+            let Fillups = [NSDate:GasFillup]()
+        }*/
+        self.Fillups = Fillups
         super.init()
     }
     
@@ -39,7 +44,7 @@ class MyCars : NSObject, NSCoding {
         aCoder.encodeObject(CarName, forKey: PropertyKey.nameKey)
         aCoder.encodeObject(CarPhoto, forKey: PropertyKey.photoKey)
         aCoder.encodeObject(TotalMileage, forKey: PropertyKey.mileageKey)
-        //aCoder.encodeObject(Fillups, forKey: PropertyKey.gasDictionaryKey)
+        aCoder.encodeObject(Fillups, forKey: PropertyKey.gasDictionaryKey)
     }
     
     
@@ -49,13 +54,10 @@ class MyCars : NSObject, NSCoding {
         let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as! String
         let photo = aDecoder.decodeObjectForKey(PropertyKey.photoKey) as? UIImage
         let mileage = aDecoder.decodeObjectForKey(PropertyKey.mileageKey) as? Int
-        //let fillups = aDecoder.decodeObjectForKey(PropertyKey.gasDictionaryKey) as! [NSDate:GasFillup]
-        self.init(CarName:name, CarPhoto:photo, TotalMileage: mileage)
+        let fillups = aDecoder.decodeObjectForKey(PropertyKey.gasDictionaryKey) as! [NSDate:GasFillup]?
+        self.init(CarName:name, CarPhoto:photo, TotalMileage: mileage, Fillups: fillups!)
         
     }
-    /*required convenience init?(coder aDecoder: NSCoding){
-        let CarName = aDecoder.decodeObjectKey
-    }*/
     
 }
 
