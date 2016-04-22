@@ -69,6 +69,23 @@ class FillupTableViewController: UITableViewController {
             }
         }
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showFillup"{
+            let showFillupView = segue.destinationViewController as! AddGasFillupViewController
+            if let fillupViewCell = sender as? FillupTableViewCell{
+                let indexPath = tableView.indexPathForCell(fillupViewCell)!
+                let selectedFillup = newFillup[indexPath.row]
+                showFillupView.fillups = selectedFillup
+            }
+            
+        }
+        else if segue.identifier == "addFillup"{
+            print ("adding new Fillup")
+        }
+    }
+    
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

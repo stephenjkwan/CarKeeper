@@ -732,6 +732,7 @@
                                     <outlet property="dateLabel" destination="pFd-Kp-man" id="KrH-dk-xW9"/>
                                     <outlet property="mpgLabel" destination="NfS-EB-9mv" id="e1U-Tg-lge"/>
                                     <outlet property="spentLabel" destination="9vH-eU-NzF" id="VaK-w4-AXh"/>
+                                    <segue destination="ZaB-PB-b0a" kind="show" identifier="showFillup" id="dwq-eA-OTz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -748,7 +749,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="z15-YP-6S3">
                             <connections>
-                                <segue destination="FNq-FV-Ljx" kind="presentation" id="ybB-WL-InU"/>
+                                <segue destination="FNq-FV-Ljx" kind="presentation" identifier="addFillup" id="ybB-WL-InU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -828,6 +829,9 @@
                                 <rect key="frame" x="183" y="429" width="234" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="EditDateTextField:" destination="ZaB-PB-b0a" eventType="editingDidBegin" id="sXm-pD-MSd"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -854,7 +858,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Gas Fillup" id="plP-pV-vjU">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ecl-yw-TTD"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ecl-yw-TTD">
+                            <connections>
+                                <action selector="CancelAdd:" destination="ZaB-PB-b0a" id="HhF-to-uuy"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="mbg-wa-QUu">
                             <connections>
                                 <segue destination="Ri9-EV-hoz" kind="unwind" unwindAction="unwindToFillupList:" id="XZY-DW-lYX"/>
@@ -920,8 +928,9 @@
         <image name="sedan-512" width="512" height="307"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hnX-Vt-U0P"/>
         <segue reference="2B3-0f-ClU"/>
+        <segue reference="hnX-Vt-U0P"/>
+        <segue reference="dwq-eA-OTz"/>
         <segue reference="8MD-Lh-dam"/>
     </inferredMetricsTieBreakers>
 </document>

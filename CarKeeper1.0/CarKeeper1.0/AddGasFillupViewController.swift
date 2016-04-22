@@ -28,6 +28,17 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
         MPGTextField.delegate = self
         DateTextField.delegate = self
         
+        if let fillups = fillups{
+            navigationItem.title = "Edit Fillup"
+            CostTexField.text = String(fillups.totalCost)
+            MilesDrivenTextField.text = String(fillups.MPG)
+            FuelTankTextField.text = String(fillups.FuelTank)
+            MPGTextField.text =  String(fillups.MPG)
+            DateTextField.text = fillups.gDate
+            
+            
+        }
+        
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //var badgecount = 0
@@ -39,8 +50,10 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
             let odometer = MilesDrivenTextField.text
             let fueltankcapacity = FuelTankTextField.text
         
-           fillups = GasFillup(totalCost:Double((costLabel)!)!,odometer: Int(odometer!),gDate: dateLabel!, MPG: Double((mpgLabel)!)!, FuelTank: Double(fueltankcapacity!))
+           fillups = GasFillup(totalCost:Double(costLabel!),odometer: Int(odometer!),gDate: dateLabel!, MPG: Double(mpgLabel!), FuelTank: Double(fueltankcapacity!))
         }
+        
+        
         /*
         
         if DeleteButton === sender{
@@ -48,6 +61,38 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
         }
         */
     }
+    @IBAction func CancelAdd(sender: AnyObject) {
+        let isPresentingInFillupMode = presentingViewController is UINavigationController
+        
+        // if its in push modal segue dismiss view
+        if isPresentingInFillupMode == false{
+            print ("trying to dismiss add view")
+            dismissViewControllerAnimated(true, completion: nil)
+            print ("dismiss sucessful in add view")
+        }
+            // if show segue dismiss view
+        else if isPresentingInFillupMode == true {
+            print ("trying to dismiss edit view")
+            self.navigationController?.popViewControllerAnimated(true)
+            print ("dismiss sucessful in edit view")
+        }
+    }
+    @IBAction func EditDateTextField(sender: UITextField) {
+        let datePickView : UIDatePicker = UIDatePicker()
+        datePickView.datePickerMode = UIDatePickerMode.Date
+        sender.inputView = datePickView
+        datePickView.addTarget(self,action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    func handleDatePicker(sender:UIDatePicker){
+        let dateHandler = NSDateFormatter()
+        dateHandler.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateHandler.timeStyle = NSDateFormatterStyle.NoStyle
+        DateTextField.text = dateHandler.stringFromDate(sender.date)
+    }
+    
+    
+    
+    
     /*
     @IBOutlet weak var Save: UIBarButtonItem!
     @IBOutlet weak var DateTextField: UITextField!
