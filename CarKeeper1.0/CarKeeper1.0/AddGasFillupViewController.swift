@@ -9,7 +9,46 @@
 import UIKit
 
 class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
-   /*
+   
+    
+    @IBOutlet weak var CostTexField: UITextField!
+    @IBOutlet weak var MilesDrivenTextField: UITextField!
+    @IBOutlet weak var FuelTankTextField: UITextField!
+    @IBOutlet weak var MPGTextField: UITextField!
+    @IBOutlet weak var DateTextField: UITextField!
+    @IBOutlet weak var SaveButton: UIBarButtonItem!
+    
+    var fillups: GasFillup?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        CostTexField.delegate = self
+        MilesDrivenTextField.delegate = self
+        FuelTankTextField.delegate = self
+        MPGTextField.delegate = self
+        DateTextField.delegate = self
+        
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //var badgecount = 0
+        
+        if SaveButton === sender{
+            let costLabel = CostTexField.text
+            let dateLabel = DateTextField.text
+            let mpgLabel = MPGTextField.text
+            let odometer = MilesDrivenTextField.text
+            let fueltankcapacity = FuelTankTextField.text
+        
+           fillups = GasFillup(totalCost:Double((costLabel)!)!,odometer: Int(odometer!),gDate: dateLabel!, MPG: Double((mpgLabel)!)!, FuelTank: Double(fueltankcapacity!))
+        }
+        /*
+        
+        if DeleteButton === sender{
+        delete = MyDeleteButton(deleteButtonSelected: true)
+        }
+        */
+    }
+    /*
     @IBOutlet weak var Save: UIBarButtonItem!
     @IBOutlet weak var DateTextField: UITextField!
     @IBOutlet weak var OdometerTextField: UITextField!

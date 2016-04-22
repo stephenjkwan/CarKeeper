@@ -30,7 +30,7 @@ class GasFillup: NSObject, NSCoding {
         let gDate = aDecoder.decodeObjectForKey(PropertyKey.gDateKey) as! String
         let MPG = aDecoder.decodeObjectForKey(PropertyKey.MPGKey) as! Double?
         let FuelTank = aDecoder.decodeObjectForKey(PropertyKey.FuelTankKey) as! Double?
-        self.init(totalCost:totalCost,odometer: odometer,gDate: gDate, MPG: MPG, FuelTank: FuelTank)
+        self.init(totalCost:totalCost,odometer: odometer,gDate: gDate, MPG: MPG!, FuelTank: FuelTank)
     }
 
     

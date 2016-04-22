@@ -695,13 +695,13 @@
         <!--Gas Fillups-->
         <scene sceneID="mrF-MO-fEb">
             <objects>
-                <tableViewController id="PB3-sK-0I8" sceneMemberID="viewController">
+                <tableViewController id="PB3-sK-0I8" customClass="FillupTableViewController" customModule="CarKeeper1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="BC6-ry-oCx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FIllupTableViewCell" rowHeight="65" id="Hc5-rO-Yy5" customClass="FillupTableViewCell" customModule="CarKeeper1_0" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FillupTableViewCell" rowHeight="65" id="Hc5-rO-Yy5" customClass="FillupTableViewCell" customModule="CarKeeper1_0" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hc5-rO-Yy5" id="0wz-iY-o9A">
@@ -714,20 +714,25 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MPG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfS-EB-9mv">
-                                            <rect key="frame" x="453" y="8" width="81" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vH-eU-NzF">
+                                            <rect key="frame" x="165" y="8" width="90" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vH-eU-NzF">
-                                            <rect key="frame" x="255" y="8" width="90" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MPG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfS-EB-9mv">
+                                            <rect key="frame" x="335" y="8" width="81" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="pFd-Kp-man" id="KrH-dk-xW9"/>
+                                    <outlet property="mpgLabel" destination="NfS-EB-9mv" id="e1U-Tg-lge"/>
+                                    <outlet property="spentLabel" destination="9vH-eU-NzF" id="VaK-w4-AXh"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -755,7 +760,7 @@
         <!--Add Gas Fillup-->
         <scene sceneID="wtW-vq-vyi">
             <objects>
-                <viewController id="ZaB-PB-b0a" sceneMemberID="viewController">
+                <viewController id="ZaB-PB-b0a" customClass="AddGasFillupViewController" customModule="CarKeeper1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fEY-5A-hTG"/>
                         <viewControllerLayoutGuide type="bottom" id="3OK-16-NmM"/>
@@ -850,10 +855,23 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Gas Fillup" id="plP-pV-vjU">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ecl-yw-TTD"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="mbg-wa-QUu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="mbg-wa-QUu">
+                            <connections>
+                                <segue destination="Ri9-EV-hoz" kind="unwind" unwindAction="unwindToFillupList:" id="XZY-DW-lYX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="CostTexField" destination="Jpw-ar-86X" id="DYQ-0s-5BQ"/>
+                        <outlet property="DateTextField" destination="b7F-51-wgY" id="q5b-O5-tX5"/>
+                        <outlet property="FuelTankTextField" destination="hq4-kU-vjP" id="EXw-5C-cEW"/>
+                        <outlet property="MPGTextField" destination="3mg-MQ-xfi" id="23i-Ds-XrR"/>
+                        <outlet property="MilesDrivenTextField" destination="UHR-Nn-ygg" id="Pp7-R8-lW3"/>
+                        <outlet property="SaveButton" destination="mbg-wa-QUu" id="Ziw-1v-TFg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sls-pY-OpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ri9-EV-hoz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4110" y="602"/>
         </scene>

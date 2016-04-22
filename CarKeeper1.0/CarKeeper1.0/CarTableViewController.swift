@@ -61,7 +61,7 @@ class CarTableViewController: UITableViewController {
             print("CarName : \(car.CarName)")
             print(" Fillups:")
             for fillup in car.Fillups {
-                print("     date: \(fillup.0) odometer:\(fillup.1.odometer!) TotalCost: \(fillup.1.totalCost!)")
+                print("     date: \(fillup.0) odometer:\(fillup.1.odometer!) TotalCost: \(fillup.1.totalCost)")
             }
             print(" Reminders")
             for reminder in car.Reminders{

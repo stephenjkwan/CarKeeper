@@ -9,5 +9,16 @@
 import UIKit
 
 class FillupTableViewCell: UITableViewCell {
+    @IBOutlet weak var spentLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var mpgLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated:animated)
+    }
     
 }
