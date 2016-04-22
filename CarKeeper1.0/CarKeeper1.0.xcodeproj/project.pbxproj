@@ -140,6 +140,7 @@
 			children = (
 				AE95CC3A1CC875410007A447 /* FillupTableViewCell.swift */,
 				AE234A941CC2E31800C21BC7 /* AddGasFillupViewController.swift */,
+				AE234A921CC2DEA500C21BC7 /* GasFillup.swift */,
 				AE234A901CC2CD6E00C21BC7 /* GasMileageViewController.swift */,
 			);
 			name = GasMileageTab;
@@ -172,7 +173,6 @@
 				AEA8F3C91C822E6500C16E70 /* AppDelegate.swift */,
 				AEA8F3D21C822E6500C16E70 /* Assets.xcassets */,
 				AE234A361CC2B42B00C21BC7 /* GarageMenu */,
-				AE234A921CC2DEA500C21BC7 /* GasFillup.swift */,
 				AE234A961CC2E35C00C21BC7 /* GasMileageTab */,
 				AEA8F3D71C822E6500C16E70 /* Info.plist */,
 				AEA8F3D41C822E6500C16E70 /* LaunchScreen.storyboard */,

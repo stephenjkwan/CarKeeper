@@ -9,6 +9,7 @@
 import UIKit
 
 class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
+   /*
     @IBOutlet weak var Save: UIBarButtonItem!
     @IBOutlet weak var DateTextField: UITextField!
     @IBOutlet weak var OdometerTextField: UITextField!
@@ -48,5 +49,7 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
         DateTextField.text = dateHandler.stringFromDate(sender.date)
         nDate = sender.date
     }
+*/
+    
 
 }
