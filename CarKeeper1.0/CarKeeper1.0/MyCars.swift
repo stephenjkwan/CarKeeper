@@ -19,22 +19,23 @@ class MyCars : NSObject, NSCoding {
      which includes the total cost of the fillup and the odometer.
      */
     var Fillups : [NSDate:GasFillup]
-    
+    var Reminders : [MyReminders]
     //MARK: Archive Paths we use to store and retrieve data.
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("cars")
     
-    init?(CarName: String, CarPhoto: UIImage?, TotalMileage: Int?, Fillups: [NSDate:GasFillup]){
+    init?(CarName: String, CarPhoto: UIImage?, TotalMileage: Int?, Fillups: [NSDate:GasFillup], Reminders: [MyReminders]){
         print("in init where i create an empty gas fillup")
         self.CarName = CarName
         self.CarPhoto = CarPhoto
         self.TotalMileage = TotalMileage
         //need to check when to create an emptyp dictionary or not
         print(Fillups)
-              /* if Fillups.count = 0{
-            let Fillups = [NSDate:GasFillup]()
-        }*/
+        /* if Fillups.count = 0{
+         let Fillups = [NSDate:GasFillup]()
+         }*/
         self.Fillups = Fillups
+        self.Reminders = Reminders
         super.init()
     }
     
@@ -45,6 +46,7 @@ class MyCars : NSObject, NSCoding {
         aCoder.encodeObject(CarPhoto, forKey: PropertyKey.photoKey)
         aCoder.encodeObject(TotalMileage, forKey: PropertyKey.mileageKey)
         aCoder.encodeObject(Fillups, forKey: PropertyKey.gasDictionaryKey)
+        aCoder.encodeObject(Reminders, forKey: PropertyKey.RemindersKey)
     }
     
     
@@ -55,7 +57,8 @@ class MyCars : NSObject, NSCoding {
         let photo = aDecoder.decodeObjectForKey(PropertyKey.photoKey) as? UIImage
         let mileage = aDecoder.decodeObjectForKey(PropertyKey.mileageKey) as? Int
         let fillups = aDecoder.decodeObjectForKey(PropertyKey.gasDictionaryKey) as! [NSDate:GasFillup]?
-        self.init(CarName:name, CarPhoto:photo, TotalMileage: mileage, Fillups: fillups!)
+        let reminders = aDecoder.decodeObjectForKey(PropertyKey.RemindersKey) as! [MyReminders]?
+        self.init(CarName:name, CarPhoto:photo, TotalMileage: mileage, Fillups: fillups!, Reminders: reminders!)
         
     }
     
@@ -70,4 +73,6 @@ struct PropertyKey{
     static let photoKey = "Photo"
     static let mileageKey = "Mileage"
     static let gasDictionaryKey = "gasDictionary"
+    static let RemindersKey = "Reminders"
+    /* for the reminders */
 }

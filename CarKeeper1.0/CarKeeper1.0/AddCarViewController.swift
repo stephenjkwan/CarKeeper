@@ -9,7 +9,7 @@
 import UIKit
 
 class AddCarViewController: UIViewController,UIImagePickerControllerDelegate, UITextFieldDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var CarYearTextField: UITextField!
     @IBOutlet weak var CarMakeTextField: UITextField!
     @IBOutlet weak var CarModelTextField: UITextField!
@@ -27,11 +27,11 @@ class AddCarViewController: UIViewController,UIImagePickerControllerDelegate, UI
         // Do any additional setup after loading the view.
     }
     /*
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-*/
+     override func didReceiveMemoryWarning() {
+     super.didReceiveMemoryWarning()
+     // Dispose of any resources that can be recreated.
+     }
+     */
     @IBAction func CancelAdd(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -53,8 +53,9 @@ class AddCarViewController: UIViewController,UIImagePickerControllerDelegate, UI
             let CarPhoto = DefaultImageView.image
             let GasMileage = Int(CarMileageTextField.text!)
             let Fillups = [NSDate:GasFillup]()
+            let reminders = [MyReminders]()
             // Set the Car to be passed to CartTableViewController after the unwind segue.
-            Cars = MyCars(CarName: CarName, CarPhoto: CarPhoto, TotalMileage: GasMileage, Fillups: Fillups )
+            Cars = MyCars(CarName: CarName, CarPhoto: CarPhoto, TotalMileage: GasMileage, Fillups: Fillups, Reminders: reminders)
         }
     }
     //Actions
@@ -78,5 +79,5 @@ class AddCarViewController: UIViewController,UIImagePickerControllerDelegate, UI
     }
     
     
-
+    
 }
