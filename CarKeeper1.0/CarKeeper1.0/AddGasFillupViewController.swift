@@ -30,8 +30,8 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
         
         if let fillups = fillups{
             navigationItem.title = "Edit Fillup"
-            CostTexField.text = String(fillups.totalCost)
-            MilesDrivenTextField.text = String(fillups.MPG)
+            CostTexField.text = fillups.totalCost as String
+            MilesDrivenTextField.text = String(fillups.milesdriven)
             FuelTankTextField.text = String(fillups.FuelTank)
             MPGTextField.text =  String(fillups.MPG)
             DateTextField.text = fillups.gDate
@@ -41,18 +41,42 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
         
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //var badgecount = 0
+       
+        let conversion = Double(CostTexField.text!)
         
         if SaveButton === sender{
-            let costLabel = CostTexField.text
+            
+            print(CostTexField)
+            
+            let costLabel: NSString
+            let mpgLabel: NSString
+            let miles = Double(MilesDrivenTextField.text!)
+            let tank = Double(FuelTankTextField.text!)
+            if( miles == nil || tank == nil){
+                mpgLabel = NSString(format:"%.2f",0)
+
+            }
+            else{
+                let mpgconversion = (miles!/tank!)
+                mpgLabel = NSString(format:"%.2f",mpgconversion)
+            }
+            
+            if CostTexField.text == nil || conversion == nil{
+                costLabel = NSString(format:"%.2f",0)
+            }
+            else{
+                let conversion = Double(CostTexField.text!)
+                costLabel = NSString(format:"%.2f", conversion!)
+            }
+        
             let dateLabel = DateTextField.text
-            let mpgLabel = MPGTextField.text
-            let odometer = MilesDrivenTextField.text
+            let mdriven = MilesDrivenTextField.text
             let fueltankcapacity = FuelTankTextField.text
         
-           fillups = GasFillup(totalCost:Double(costLabel!),odometer: Int(odometer!),gDate: dateLabel!, MPG: Double(mpgLabel!), FuelTank: Double(fueltankcapacity!))
+            
+            fillups = GasFillup(totalCost: costLabel, milesdriven: mdriven!,gDate: dateLabel!,MPG: mpgLabel as String, FuelTank: fueltankcapacity!)
         }
-        
+
         
         /*
         

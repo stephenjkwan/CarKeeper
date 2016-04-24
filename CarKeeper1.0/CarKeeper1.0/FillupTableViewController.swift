@@ -44,12 +44,9 @@ class FillupTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! FillupTableViewCell
         
             let tmp = newFillup[indexPath.row]
-            print(tmp.totalCost)
-            print(tmp.gDate)
-            print(tmp.MPG)
-            cell.spentLabel.text = String(tmp.totalCost)
+            cell.spentLabel.text = tmp.totalCost as String
             cell.dateLabel.text = tmp.gDate
-            cell.mpgLabel.text = String(tmp.MPG)
+            cell.mpgLabel.text = tmp.MPG as String
         
         // Configure the cell...
         return cell
