@@ -9,7 +9,7 @@
 import UIKit
 
 class RecordsTableViewController: UITableViewController {
-
+    
     var  records = [String]()
     var newRecord: String = ""
     
@@ -18,6 +18,7 @@ class RecordsTableViewController: UITableViewController {
     }
     
     @IBAction func done(segue:UIStoryboardSegue) {
+        
         let addRecordVC = segue.sourceViewController as! AddRecordsViewController
         newRecord = addRecordVC.name
         

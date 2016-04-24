@@ -18,6 +18,7 @@
 		22D655C51CA1B93500F06E00 /* AddCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D655C41CA1B93500F06E00 /* AddCarViewController.swift */; };
 		35A43F2D1CC70C9A00711811 /* AddRecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A43F2C1CC70C9A00711811 /* AddRecordsViewController.swift */; };
 		35A43F2F1CC70DF700711811 /* RecordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A43F2E1CC70DF700711811 /* RecordsTableViewController.swift */; };
+		35A43F311CCD5A3800711811 /* MyRecords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A43F301CCD5A3800711811 /* MyRecords.swift */; };
 		AE234A911CC2CD6E00C21BC7 /* GasMileageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE234A901CC2CD6E00C21BC7 /* GasMileageViewController.swift */; };
 		AE234A931CC2DEA500C21BC7 /* GasFillup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE234A921CC2DEA500C21BC7 /* GasFillup.swift */; };
 		AE234A951CC2E31800C21BC7 /* AddGasFillupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE234A941CC2E31800C21BC7 /* AddGasFillupViewController.swift */; };
@@ -73,6 +74,7 @@
 		22D655C41CA1B93500F06E00 /* AddCarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCarViewController.swift; sourceTree = "<group>"; };
 		35A43F2C1CC70C9A00711811 /* AddRecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddRecordsViewController.swift; path = ../AddRecordsViewController.swift; sourceTree = "<group>"; };
 		35A43F2E1CC70DF700711811 /* RecordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsTableViewController.swift; sourceTree = "<group>"; };
+		35A43F301CCD5A3800711811 /* MyRecords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRecords.swift; sourceTree = "<group>"; };
 		AE234A901CC2CD6E00C21BC7 /* GasMileageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasMileageViewController.swift; sourceTree = "<group>"; };
 		AE234A921CC2DEA500C21BC7 /* GasFillup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasFillup.swift; sourceTree = "<group>"; };
 		AE234A941CC2E31800C21BC7 /* AddGasFillupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGasFillupViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				35A43F2C1CC70C9A00711811 /* AddRecordsViewController.swift */,
+				35A43F301CCD5A3800711811 /* MyRecords.swift */,
 				AEA8F3C91C822E6500C16E70 /* AppDelegate.swift */,
 				AEA8F3D21C822E6500C16E70 /* Assets.xcassets */,
 				AE234A361CC2B42B00C21BC7 /* GarageMenu */,
@@ -350,6 +353,7 @@
 				AE234A911CC2CD6E00C21BC7 /* GasMileageViewController.swift in Sources */,
 				35A43F2D1CC70C9A00711811 /* AddRecordsViewController.swift in Sources */,
 				22B8B7471CBEF65900B037C3 /* MyReminders.swift in Sources */,
+				35A43F311CCD5A3800711811 /* MyRecords.swift in Sources */,
 				AE234A931CC2DEA500C21BC7 /* GasFillup.swift in Sources */,
 				22D655C51CA1B93500F06E00 /* AddCarViewController.swift in Sources */,
 				22B8B7451CBEEF9E00B037C3 /* MaintenanceTableViewCell.swift in Sources */,

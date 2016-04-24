@@ -8,15 +8,24 @@
 
 import UIKit
 
-class AddRecordsViewController: UIViewController {
+class AddRecordsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
 
     @IBOutlet weak var dateOut: UITextField!
     
+    @IBOutlet weak var odoOut: UITextField!
+    
+    @IBOutlet weak var commentOut: UITextField!
+    @IBOutlet weak var priceOut: UITextField!
     let datePickerView:UIDatePicker = UIDatePicker()
     
     @IBOutlet weak var taskOut: UITextField!
     
     var name: String = ""
+    var rOdo: String = ""
+    var rPrice: String = ""
+    var rCom: String = ""
+    
     
     @IBAction func dateAct(sender: AnyObject) {
         datePickerView.datePickerMode = UIDatePickerMode.Date
@@ -52,7 +61,15 @@ class AddRecordsViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "doneSegue" {
+            var myRecords: MyRecords
+            let dateHandler = NSDateFormatter()
             name = taskOut.text!
+            rCom = commentOut.text!
+            rOdo = odoOut.text!
+            rPrice = priceOut.text!
+            // date: dateHandler.stringFromDate(sender.date)
+            
+            myRecords = MyRecords(recordName: name, price: rPrice, odometer: rOdo, comments: rCom)!
         }
     }
     
