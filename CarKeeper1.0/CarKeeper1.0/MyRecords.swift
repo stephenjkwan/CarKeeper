@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyRecords: NSObject{
+class MyRecords: NSObject,NSCoding{
     var recordName: String
     var price: String
     var odometer: String
@@ -21,4 +21,20 @@ class MyRecords: NSObject{
         self.comments = comments
         super.init()
     }
+    
+    func encodeWithCoder(aCoder: NSCoder){
+        aCoder.encodeObject(recordName, forKey: PropertyKey.recordNameKey)
+        aCoder.encodeObject(price, forKey: PropertyKey.recordPriceKey)
+        aCoder.encodeObject(odometer, forKey: PropertyKey.recordOdometerKey)
+        aCoder.encodeObject(comments, forKey: PropertyKey.recordCommentKey)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let recordName = aDecoder.decodeObjectForKey(PropertyKey.recordNameKey) as! String
+        let price = aDecoder.decodeObjectForKey(PropertyKey.recordPriceKey) as! String
+        let odometer = aDecoder.decodeObjectForKey(PropertyKey.recordOdometerKey) as! String
+        let comments = aDecoder.decodeObjectForKey(PropertyKey.recordCommentKey) as? String
+        self.init(recordName:recordName, price:price, odometer:odometer, comments:comments!)
+    }
+    
 }

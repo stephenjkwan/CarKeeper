@@ -20,12 +20,12 @@ class MyCars : NSObject, NSCoding {
      */
     var Fillups : [GasFillup]
     var Reminders : [MyReminders]
-    //var Records : [MyRecords]
+    var Records : [MyRecords]
     //MARK: Archive Paths we use to store and retrieve data.
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("cars")
     
-    init?(CarName: String, CarPhoto: UIImage?, TotalMileage: Int?, Fillups: [GasFillup], Reminders: [MyReminders]){
+    init?(CarName: String, CarPhoto: UIImage?, TotalMileage: Int?, Fillups: [GasFillup], Reminders: [MyReminders], Records: [MyRecords]){
         print("in init where i create an empty gas fillup")
         self.CarName = CarName
         self.CarPhoto = CarPhoto
@@ -37,6 +37,7 @@ class MyCars : NSObject, NSCoding {
          }*/
         self.Fillups = Fillups
         self.Reminders = Reminders
+        self.Records = Records
         super.init()
     }
     
@@ -48,6 +49,7 @@ class MyCars : NSObject, NSCoding {
         aCoder.encodeObject(TotalMileage, forKey: PropertyKey.mileageKey)
         aCoder.encodeObject(Fillups, forKey: PropertyKey.gasDictionaryKey)
         aCoder.encodeObject(Reminders, forKey: PropertyKey.RemindersKey)
+        aCoder.encodeObject(Records, forKey: PropertyKey.RecordKey)
     }
     
     
@@ -59,7 +61,8 @@ class MyCars : NSObject, NSCoding {
         let mileage = aDecoder.decodeObjectForKey(PropertyKey.mileageKey) as? Int
         let fillups = aDecoder.decodeObjectForKey(PropertyKey.gasDictionaryKey) as! [GasFillup]?
         let reminders = aDecoder.decodeObjectForKey(PropertyKey.RemindersKey) as! [MyReminders]?
-        self.init(CarName:name, CarPhoto:photo, TotalMileage: mileage, Fillups: fillups!, Reminders: reminders!)
+        let records = aDecoder.decodeObjectForKey(PropertyKey.RecordKey) as! [MyRecords]?
+        self.init(CarName:name, CarPhoto:photo, TotalMileage: mileage, Fillups: fillups!, Reminders: reminders!, Records: records!)
         
     }
     
@@ -78,5 +81,10 @@ struct PropertyKey{
     static let reminderDateKey = "reminderDate"
     static let reminderDetailKey = "reminderDetail"
     static let reminderCommentKey = "reminderComment"
+    static let RecordKey = "Records"
+    static let recordNameKey = "recordName"
+    static let recordPriceKey = "recordPrice"
+    static let recordOdometerKey = "recordOdometer"
+    static let recordCommentKey = "recordComment"
     /* for the reminders */
 }

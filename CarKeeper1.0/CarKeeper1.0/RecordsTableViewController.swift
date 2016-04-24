@@ -13,6 +13,7 @@ class RecordsTableViewController: UITableViewController {
     var  records = [String]()
     var newRecord: String = ""
     
+    
     @IBAction func cancel(segue:UIStoryboardSegue) {
         
     }
@@ -28,6 +29,12 @@ class RecordsTableViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
+        for record in (CarStructObj.CurrentCar?.Records)!{
+            print(record.recordName)
+            print(record.price)
+            print(record.odometer)
+            print(record.comments)
+        }
         super.viewDidLoad()
         
         records = ["Filter Change","Oil Change","Tire Rotation"]

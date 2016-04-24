@@ -51,12 +51,15 @@ class CarTableViewController: UITableViewController {
          im too used to C where your not allowed to do anything.
          */
         print("in viewdidload()")
-        
+         print("got here")
         if let savedCars = CarStructObj.loadCars(){
+            print("got here")
             CarStructObj.Cars = savedCars
             //carArray = CarStructObj.Cars
         }
+        print("got here")
         for car in CarStructObj.Cars{
+            print("got here1")
             print("CarName : \(car.CarName)")
             print(" Fillups:")
             for fillup in car.Fillups {
@@ -68,6 +71,13 @@ class CarTableViewController: UITableViewController {
                 print("     comments: \(reminder.comments)")
                 print("     detail: \(reminder.reminderDetail)")
                 
+            }
+            print("Records");
+            for record in car.Records{
+                print("    name: \(record.recordName)")
+                print("    price: \(record.price)")
+                print("    odometer: \(record.odometer)")
+                print("    comments: \(record.comments)")
             }
         }
     }
@@ -138,7 +148,6 @@ class CarTableViewController: UITableViewController {
             print(selectedCar.CarName)
             TabViewController.CurrentCar = selectedCar
             CarStructObj.CurrentCar = selectedCar
-            
         }
     }
     

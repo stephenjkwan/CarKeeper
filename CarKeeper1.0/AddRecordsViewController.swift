@@ -68,8 +68,22 @@ class AddRecordsViewController: UIViewController, UIImagePickerControllerDelegat
             rOdo = odoOut.text!
             rPrice = priceOut.text!
             // date: dateHandler.stringFromDate(sender.date)
-            
             myRecords = MyRecords(recordName: name, price: rPrice, odometer: rOdo, comments: rCom)!
+            print("Saving")
+            print(name)
+            print(rCom)
+            print(rOdo)
+            print(rPrice)
+            CarStructObj.CurrentCar?.Records.append(myRecords)
+            CarStructObj.saveCars()
+            print("saved Cars")
+            for record in (CarStructObj.CurrentCar?.Records)!{
+                print(record.recordName)
+                print(record.price)
+                print(record.odometer)
+                print(record.comments)
+            }
+
         }
     }
     
