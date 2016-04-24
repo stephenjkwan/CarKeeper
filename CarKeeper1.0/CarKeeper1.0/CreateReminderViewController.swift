@@ -11,11 +11,11 @@ var nDate = NSDate()
 class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate{
     
     @IBOutlet weak var ReminderTextField: UITextField!
-    @IBOutlet weak var MonthTextField: UITextField!
-    @IBOutlet weak var MileageTextField: UITextField!
+    //@IBOutlet weak var MonthTextField: UITextField!
+    //@IBOutlet weak var MileageTextField: UITextField!
     @IBOutlet weak var DateTextField: UITextField!
     @IBOutlet weak var SaveButton: UIBarButtonItem!
-    @IBOutlet weak var DeleteButton: UIButton!
+    //@IBOutlet weak var DeleteButton: UIButton!
     @IBOutlet weak var CommentsTextField: UITextField!
     
     //var delete: MyDeleteButton?
@@ -24,15 +24,15 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
     override func viewDidLoad() {
         super.viewDidLoad()
         ReminderTextField.delegate = self
-        MonthTextField.delegate = self
-        MileageTextField.delegate=self
+       // MonthTextField.delegate = self
+        //MileageTextField.delegate=self
         DateTextField.delegate=self
         CommentsTextField.delegate=self
-        DeleteButton.hidden = true
+       // DeleteButton.hidden = true
         
         //setup views if editing a reminder
         if let Reminder = Reminder{
-            DeleteButton.hidden = false
+            //DeleteButton.hidden = false
             navigationItem.title = "Edit Reminder"
             ReminderTextField.text = Reminder.reminderDetail
             DateTextField.text = Reminder.date
@@ -109,14 +109,14 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
     @IBAction func editDateTextField(sender: UITextField) {
         
         let datePickView : UIDatePicker = UIDatePicker()
-        datePickView.datePickerMode = UIDatePickerMode.Date
+        datePickView.datePickerMode = UIDatePickerMode.DateAndTime
         sender.inputView = datePickView
         datePickView.addTarget(self,action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     func handleDatePicker(sender:UIDatePicker){
         let dateHandler = NSDateFormatter()
         dateHandler.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateHandler.timeStyle = NSDateFormatterStyle.NoStyle
+        dateHandler.timeStyle = NSDateFormatterStyle.ShortStyle
         DateTextField.text = dateHandler.stringFromDate(sender.date)
         nDate = sender.date
     }
