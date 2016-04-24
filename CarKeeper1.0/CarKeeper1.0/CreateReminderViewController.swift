@@ -43,19 +43,19 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
         
         // Do any additional setup after loading the view.
     }
-/*
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
- */
-   /*
-    func checkValidReminder() {
-        // Disable the Save button if the text field is empty.
-        let text = ReminderTextField.text ?? ""
-        SaveButton.enabled = !text.isEmpty
-    }
-    */
+    /*
+     override func didReceiveMemoryWarning() {
+     super.didReceiveMemoryWarning()
+     // Dispose of any resources that can be recreated.
+     }
+     */
+    /*
+     func checkValidReminder() {
+     // Disable the Save button if the text field is empty.
+     let text = ReminderTextField.text ?? ""
+     SaveButton.enabled = !text.isEmpty
+     }
+     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //var badgecount = 0
         
@@ -75,12 +75,14 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
             localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber+1
             //localNotification.category = "reminderCategory"
             UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            CarStructObj.CurrentCar?.Reminders.append(Reminder!)
+            CarStructObj.saveCars()
         }
         /*
-        if DeleteButton === sender{
-            delete = MyDeleteButton(deleteButtonSelected: true)
-        }
-        */
+         if DeleteButton === sender{
+         delete = MyDeleteButton(deleteButtonSelected: true)
+         }
+         */
     }
     
     // Cancel button
@@ -93,7 +95,7 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
             dismissViewControllerAnimated(true, completion: nil)
             print ("dismiss sucessful in add view")
         }
-        // if show segue dismiss view
+            // if show segue dismiss view
         else if isPresentingInReminderMode == true {
             print ("trying to dismiss edit view")
             self.navigationController?.popViewControllerAnimated(true)
@@ -106,10 +108,10 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
     /***** Begining of editing text field for dates **/
     @IBAction func editDateTextField(sender: UITextField) {
         
-    let datePickView : UIDatePicker = UIDatePicker()
-    datePickView.datePickerMode = UIDatePickerMode.Date
-    sender.inputView = datePickView
-    datePickView.addTarget(self,action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
+        let datePickView : UIDatePicker = UIDatePicker()
+        datePickView.datePickerMode = UIDatePickerMode.Date
+        sender.inputView = datePickView
+        datePickView.addTarget(self,action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     func handleDatePicker(sender:UIDatePicker){
         let dateHandler = NSDateFormatter()
@@ -120,18 +122,18 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
     }
     /**** Ened of editing text field for dates **/
     
-     // Override to support editing the table view.
+    // Override to support editing the table view.
     
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

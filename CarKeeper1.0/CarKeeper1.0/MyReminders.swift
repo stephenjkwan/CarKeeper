@@ -19,24 +19,19 @@ class MyReminders: NSObject, NSCoding{
         self.comments = comments
         super.init()
     }
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(date, forKey: PropertyKey.reminderDateKey)
+        aCoder.encodeObject(reminderDetail, forKey: PropertyKey.reminderDetailKey)
+        aCoder.encodeObject(comments, forKey: PropertyKey.reminderCommentKey)
+    }
+    
     required convenience init?(coder aDecoder: NSCoder) {
         let date = aDecoder.decodeObjectForKey(PropertyKey.reminderDateKey) as! String
-        let reminderDetail = aDecoder.encodeObject(PropertyKey.reminderDetailKey) as! String
-        let comments = aDecoder.encodeObject(PropertyKey.reminderCommentKey) as! String
+        let reminderDetail = aDecoder.decodeObjectForKey(PropertyKey.reminderDetailKey) as! String
+        let comments = aDecoder.decodeObjectForKey(PropertyKey.reminderCommentKey) as! String
         self.init(date: date, reminderDetail: reminderDetail, comments: comments)
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(date, forKey: PropertyKey.reminderDateKey)
-        aCoder.encodeObject(date, forKey: PropertyKey.reminderDateKey)
-        aCoder.encodeObject(date, forKey: PropertyKey.reminderDateKey)
-    }
-    struct PropertyKey{
-        static let reminderDateKey = "reminderDate"
-        static let reminderDetailKey = "reminderDetail"
-        static let reminderCommentKey = "reminderComment"
-        
-    }
 }
 
 

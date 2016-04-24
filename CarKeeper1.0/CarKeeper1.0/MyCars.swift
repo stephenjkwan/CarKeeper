@@ -18,13 +18,14 @@ class MyCars : NSObject, NSCoding {
      Fillups is a dictionary where the key is the date of the fillup and the value is another class
      which includes the total cost of the fillup and the odometer.
      */
-    var Fillups : [NSDate:GasFillup]
+    var Fillups : [GasFillup]
     var Reminders : [MyReminders]
+    //var Records : [MyRecords]
     //MARK: Archive Paths we use to store and retrieve data.
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("cars")
     
-    init?(CarName: String, CarPhoto: UIImage?, TotalMileage: Int?, Fillups: [NSDate:GasFillup], Reminders: [MyReminders]){
+    init?(CarName: String, CarPhoto: UIImage?, TotalMileage: Int?, Fillups: [GasFillup], Reminders: [MyReminders]){
         print("in init where i create an empty gas fillup")
         self.CarName = CarName
         self.CarPhoto = CarPhoto
@@ -56,7 +57,7 @@ class MyCars : NSObject, NSCoding {
         let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as! String
         let photo = aDecoder.decodeObjectForKey(PropertyKey.photoKey) as? UIImage
         let mileage = aDecoder.decodeObjectForKey(PropertyKey.mileageKey) as? Int
-        let fillups = aDecoder.decodeObjectForKey(PropertyKey.gasDictionaryKey) as! [NSDate:GasFillup]?
+        let fillups = aDecoder.decodeObjectForKey(PropertyKey.gasDictionaryKey) as! [GasFillup]?
         let reminders = aDecoder.decodeObjectForKey(PropertyKey.RemindersKey) as! [MyReminders]?
         self.init(CarName:name, CarPhoto:photo, TotalMileage: mileage, Fillups: fillups!, Reminders: reminders!)
         
@@ -74,5 +75,8 @@ struct PropertyKey{
     static let mileageKey = "Mileage"
     static let gasDictionaryKey = "gasDictionary"
     static let RemindersKey = "Reminders"
+    static let reminderDateKey = "reminderDate"
+    static let reminderDetailKey = "reminderDetail"
+    static let reminderCommentKey = "reminderComment"
     /* for the reminders */
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
-   
+    
     
     @IBOutlet weak var CostTexField: UITextField!
     @IBOutlet weak var MilesDrivenTextField: UITextField!
@@ -17,6 +17,9 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var MPGTextField: UITextField!
     @IBOutlet weak var DateTextField: UITextField!
     @IBOutlet weak var SaveButton: UIBarButtonItem!
+    let datePickView : UIDatePicker = UIDatePicker()
+    
+    var CurrentCar:MyCars?
     
     var fillups: GasFillup?
     
@@ -41,7 +44,7 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
         
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-       
+        
         let conversion = Double(CostTexField.text!)
         
         if SaveButton === sender{
@@ -54,7 +57,7 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
             let tank = Double(FuelTankTextField.text!)
             if( miles == nil || tank == nil){
                 mpgLabel = NSString(format:"%.2f",0)
-
+                
             }
             else{
                 let mpgconversion = (miles!/tank!)
@@ -68,22 +71,28 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
                 let conversion = Double(CostTexField.text!)
                 costLabel = NSString(format:"%.2f", conversion!)
             }
-        
+            
             let dateLabel = DateTextField.text
             let mdriven = MilesDrivenTextField.text
             let fueltankcapacity = FuelTankTextField.text
-        
+            
             
             fillups = GasFillup(totalCost: costLabel, milesdriven: mdriven!,gDate: dateLabel!,MPG: mpgLabel as String, FuelTank: fueltankcapacity!)
+            //let TabBar = self.tabBarController as! TabBarController
+            //CurrentCar = TabBar.CurrentCar
+            CarStructObj.CurrentCar?.Fillups.append(fillups!)
+            //CurrentCar?.Fillups[datePickView.date] = fillups
+            CarStructObj.saveCars()
+            
         }
-
+        
         
         /*
-        
-        if DeleteButton === sender{
-        delete = MyDeleteButton(deleteButtonSelected: true)
-        }
-        */
+         
+         if DeleteButton === sender{
+         delete = MyDeleteButton(deleteButtonSelected: true)
+         }
+         */
     }
     @IBAction func CancelAdd(sender: AnyObject) {
         let isPresentingInFillupMode = presentingViewController is UINavigationController
@@ -102,7 +111,6 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
         }
     }
     @IBAction func EditDateTextField(sender: UITextField) {
-        let datePickView : UIDatePicker = UIDatePicker()
         datePickView.datePickerMode = UIDatePickerMode.Date
         sender.inputView = datePickView
         datePickView.addTarget(self,action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
@@ -118,46 +126,46 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
     
     
     /*
-    @IBOutlet weak var Save: UIBarButtonItem!
-    @IBOutlet weak var DateTextField: UITextField!
-    @IBOutlet weak var OdometerTextField: UITextField!
-    @IBOutlet weak var TotalCostTextField: UITextField!
-    let datePickView : UIDatePicker = UIDatePicker()
-    var CurrentCar:MyCars?
-    @IBAction func SaveButton(sender: AnyObject) {
-        var FillupsDictionary = CurrentCar!.Fillups
-        var totalCost : Double?
-        var odometer : Int?
-        totalCost = (TotalCostTextField.text! as NSString).doubleValue
-        odometer = Int(OdometerTextField.text!)
-        let Fillup = GasFillup(totalCost: totalCost, odometer: odometer)
-        print("totalCost = \(Fillup!.totalCost) odomter = \(Fillup!.odometer) date = \(datePickView.date)")
-        CurrentCar!.Fillups[datePickView.date] = Fillup
-        CarStructObj.saveCars()
-        print(CurrentCar!.Fillups)
-    }
-    override func viewDidLoad() {
-        let TabBar = self.tabBarController as! TabBarController
-        CurrentCar = TabBar.CurrentCar
-        print(CurrentCar!.CarName)
-
-        super.viewDidLoad()
-    }
-
-    @IBAction func EditDateTextField(sender: UITextField) {
-        
-        datePickView.datePickerMode = UIDatePickerMode.Date
-        sender.inputView = datePickView
-        datePickView.addTarget(self,action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
-    }
-    func handleDatePicker(sender:UIDatePicker){
-        let dateHandler = NSDateFormatter()
-        dateHandler.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateHandler.timeStyle = NSDateFormatterStyle.NoStyle
-        DateTextField.text = dateHandler.stringFromDate(sender.date)
-        nDate = sender.date
-    }
-*/
+     @IBOutlet weak var Save: UIBarButtonItem!
+     @IBOutlet weak var DateTextField: UITextField!
+     @IBOutlet weak var OdometerTextField: UITextField!
+     @IBOutlet weak var TotalCostTextField: UITextField!
+     let datePickView : UIDatePicker = UIDatePicker()
+     var CurrentCar:MyCars?
+     @IBAction func SaveButton(sender: AnyObject) {
+     var FillupsDictionary = CurrentCar!.Fillups
+     var totalCost : Double?
+     var odometer : Int?
+     totalCost = (TotalCostTextField.text! as NSString).doubleValue
+     odometer = Int(OdometerTextField.text!)
+     let Fillup = GasFillup(totalCost: totalCost, odometer: odometer)
+     print("totalCost = \(Fillup!.totalCost) odomter = \(Fillup!.odometer) date = \(datePickView.date)")
+     CurrentCar!.Fillups[datePickView.date] = Fillup
+     CarStructObj.saveCars()
+     print(CurrentCar!.Fillups)
+     }
+     override func viewDidLoad() {
+     let TabBar = self.tabBarController as! TabBarController
+     CurrentCar = TabBar.CurrentCar
+     print(CurrentCar!.CarName)
+     
+     super.viewDidLoad()
+     }
+     
+     @IBAction func EditDateTextField(sender: UITextField) {
+     
+     datePickView.datePickerMode = UIDatePickerMode.Date
+     sender.inputView = datePickView
+     datePickView.addTarget(self,action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
+     }
+     func handleDatePicker(sender:UIDatePicker){
+     let dateHandler = NSDateFormatter()
+     dateHandler.dateStyle = NSDateFormatterStyle.MediumStyle
+     dateHandler.timeStyle = NSDateFormatterStyle.NoStyle
+     DateTextField.text = dateHandler.stringFromDate(sender.date)
+     nDate = sender.date
+     }
+     */
     
-
+    
 }

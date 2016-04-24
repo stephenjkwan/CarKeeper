@@ -11,6 +11,7 @@ import UIKit
  */
 struct CarStruct {
     var Cars = [MyCars]()
+    var CurrentCar: MyCars?
     func saveCars(){
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(Cars, toFile: MyCars.ArchiveURL.path!)
         if !isSuccessfulSave {
@@ -21,6 +22,7 @@ struct CarStruct {
     func loadCars()->[MyCars]?{
         return NSKeyedUnarchiver.unarchiveObjectWithFile(MyCars.ArchiveURL.path!) as? [MyCars]
     }
+    
     
 }
 /* so instead of a variable car array in our cartableview controller we have a global struct insatnce called CarStructObj.
@@ -49,19 +51,16 @@ class CarTableViewController: UITableViewController {
          im too used to C where your not allowed to do anything.
          */
         print("in viewdidload()")
-        print("test")
-        
         
         if let savedCars = CarStructObj.loadCars(){
             CarStructObj.Cars = savedCars
             //carArray = CarStructObj.Cars
         }
-        print("in viewdidload()")
         for car in CarStructObj.Cars{
             print("CarName : \(car.CarName)")
             print(" Fillups:")
             for fillup in car.Fillups {
-                print("     date: \(fillup.0) odometer:\(fillup.1.milesdriven) TotalCost: \(fillup.1.totalCost)")
+                print("     date: \(fillup.gDate) odometer:\(fillup.milesdriven) TotalCost: \(fillup.totalCost)")
             }
             print(" Reminders")
             for reminder in car.Reminders{
@@ -70,12 +69,7 @@ class CarTableViewController: UITableViewController {
                 print("     detail: \(reminder.reminderDetail)")
                 
             }
-            
-            
         }
-        
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -143,6 +137,7 @@ class CarTableViewController: UITableViewController {
             let TabViewController = segue.destinationViewController as! TabBarController
             print(selectedCar.CarName)
             TabViewController.CurrentCar = selectedCar
+            CarStructObj.CurrentCar = selectedCar
             
         }
     }
