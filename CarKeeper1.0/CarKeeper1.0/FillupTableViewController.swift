@@ -50,6 +50,8 @@ class FillupTableViewController: UITableViewController {
         cell.spentLabel.text = tmp.totalCost as String
         cell.dateLabel.text = tmp.gDate
         cell.mpgLabel.text = tmp.MPG as String
+        cell.dollasign.text = "$"
+        cell.mpgstaticlabel.text="MPG"
         if let savedFillups = CarStructObj.CurrentCar?.Fillups{
             newFillup = savedFillups
             //print(savedFillups)

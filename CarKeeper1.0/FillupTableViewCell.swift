@@ -12,6 +12,8 @@ class FillupTableViewCell: UITableViewCell {
     @IBOutlet weak var spentLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var mpgLabel: UILabel!
+    @IBOutlet weak var mpgstaticlabel: UILabel!
+    @IBOutlet weak var dollasign: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
