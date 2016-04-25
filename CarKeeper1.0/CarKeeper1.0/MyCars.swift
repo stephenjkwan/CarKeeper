@@ -86,5 +86,6 @@ struct PropertyKey{
     static let recordPriceKey = "recordPrice"
     static let recordOdometerKey = "recordOdometer"
     static let recordCommentKey = "recordComment"
+    static let recordDateKey = "recordDateKey"
     /* for the reminders */
 }

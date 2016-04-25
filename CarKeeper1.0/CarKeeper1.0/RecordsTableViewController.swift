@@ -10,7 +10,7 @@ import UIKit
 
 class RecordsTableViewController: UITableViewController {
     
-    var  records = [String]()
+    var  newRecords = [MyRecords]()
     var newRecord: String = ""
     
     
@@ -19,16 +19,31 @@ class RecordsTableViewController: UITableViewController {
     }
     
     @IBAction func done(segue:UIStoryboardSegue) {
-        
+        if let sourceViewController = segue.sourceViewController as? AddRecordsViewController, myRecords = sourceViewController.myRecords{
+            // allows for edited view to be changed
+            if let selectedIndexPath = tableView.indexPathForSelectedRow{
+                newRecords[selectedIndexPath.row] = myRecords
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+            }
+            else {
+                // creates new reminder
+                let newIndexPath = NSIndexPath(forRow: newRecords.count, inSection: 0)
+                newRecords.append(myRecords)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            }
+           // CarStructObj.saveCars()
+        }
+       /*
         let addRecordVC = segue.sourceViewController as! AddRecordsViewController
         newRecord = addRecordVC.name
         
-        records.append(newRecord)
+        //records.append(newRecord)
         self.tableView.reloadData()
-        
+       */
     }
     
     override func viewDidLoad() {
+        navigationItem.leftBarButtonItem = editButtonItem()
         for record in (CarStructObj.CurrentCar?.Records)!{
             print(record.recordName)
             print(record.price)
@@ -37,7 +52,7 @@ class RecordsTableViewController: UITableViewController {
         }
         super.viewDidLoad()
         
-        records = ["Filter Change","Oil Change","Tire Rotation"]
+        //records = ["Filter Change","Oil Change","Tire Rotation"]
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -60,14 +75,36 @@ class RecordsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return records.count
+        return newRecords.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("recordCell", forIndexPath: indexPath)
-        cell.textLabel!.text = records[indexPath.row]
+        let cellIdentifier = "RecordsTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! RecordsTableViewCell
+        let tmp = newRecords[indexPath.row]
+        cell.taskNameLabel.text = tmp.recordName
+        cell.priceLabel.text = tmp.price
+        cell.dateLabel.text = tmp.recordDate
         return cell
+    }
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        if editingStyle == .Delete{
+            // Delete the row from the car array
+            newRecords.removeAtIndex(indexPath.row)
+            CarStructObj.CurrentCar?.Records.removeAtIndex(indexPath.row)
+            //save the cars whenver an instance of the cars is deleted
+            CarStructObj.saveCars()
+            //deletes from the table view
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert{
+            //create a new instance? idk...
+        }
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
     }
 
     /*
@@ -105,14 +142,25 @@ class RecordsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "show"{
+            let showReminderView = segue.destinationViewController as! AddRecordsViewController
+            if let recordsViewCell = sender as? RecordsTableViewCell{
+                let indexPath = tableView.indexPathForCell(recordsViewCell)!
+                let selectedRecords = newRecords[indexPath.row]
+                showReminderView.myRecords = selectedRecords
+            }
+            
+        }
+        else if segue.identifier == "doneSegue"{
+            print ("adding new reminder")
+        }
+     
     }
-    */
+
 
 }

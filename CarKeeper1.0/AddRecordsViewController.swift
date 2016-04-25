@@ -8,8 +8,8 @@
 
 import UIKit
 
-class AddRecordsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+class AddRecordsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+    var myRecords: MyRecords?
 
     @IBOutlet weak var dateOut: UITextField!
     
@@ -61,20 +61,20 @@ class AddRecordsViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "doneSegue" {
-            var myRecords: MyRecords
+            //var myRecords: MyRecords
             let dateHandler = NSDateFormatter()
             name = taskOut.text!
             rCom = commentOut.text!
             rOdo = odoOut.text!
             rPrice = priceOut.text!
             // date: dateHandler.stringFromDate(sender.date)
-            myRecords = MyRecords(recordName: name, price: rPrice, odometer: rOdo, comments: rCom)!
+            myRecords = MyRecords(recordName: name, price: rPrice, odometer: rOdo, comments: rCom,recordDate: dateOut.text!)!
             print("Saving")
             print(name)
             print(rCom)
             print(rOdo)
             print(rPrice)
-            CarStructObj.CurrentCar?.Records.append(myRecords)
+            CarStructObj.CurrentCar?.Records.append(myRecords!)
             CarStructObj.saveCars()
             print("saved Cars")
             for record in (CarStructObj.CurrentCar?.Records)!{
@@ -89,7 +89,21 @@ class AddRecordsViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        taskOut.delegate = self
+        dateOut.delegate = self
+        priceOut.delegate = self
+        commentOut.delegate = self
+        odoOut.delegate = self
+        
+        
+        if let myRecords = myRecords{
+            navigationItem.title = "Edit Record"
+            taskOut.text = myRecords.recordName
+            dateOut.text = myRecords.recordDate
+            priceOut.text = myRecords.price
+            commentOut.text = myRecords.comments
+            odoOut.text = myRecords.odometer
+        }
         // Do any additional setup after loading the view.
     }
 

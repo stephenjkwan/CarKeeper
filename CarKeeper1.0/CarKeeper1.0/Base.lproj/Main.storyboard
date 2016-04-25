@@ -414,6 +414,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="zcu-4i-vBa">
+                            <rect key="frame" x="0.0" y="162" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="9dU-no-gyH"/>
+                                <barButtonItem title="Back To Garage" id="Paw-tk-cSK">
+                                    <connections>
+                                        <segue destination="rl0-ga-Erb" kind="modal" id="XHo-X6-lMf"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="1qy-TX-080"/>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MaintenanceTableViewCell" rowHeight="70" id="1af-18-jRa" customClass="MaintenanceTableViewCell" customModule="CarKeeper1_0" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="70"/>
@@ -449,11 +462,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Maintenance Reminders" id="jib-uu-Cwk">
-                        <barButtonItem key="leftBarButtonItem" title="Garage" id="0lg-zd-jZS">
-                            <connections>
-                                <segue destination="rl0-ga-Erb" kind="modal" id="TdP-Ti-cKe"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="x7V-gb-grm">
                             <connections>
                                 <segue destination="B9l-CT-se0" kind="presentation" identifier="AddReminder" id="N2z-Ni-eR7"/>
@@ -503,59 +511,59 @@
             </objects>
             <point key="canvasLocation" x="2777" y="-358"/>
         </scene>
-        <!--Gas Mileage-->
-        <scene sceneID="nTQ-fV-duV">
-            <objects>
-                <viewController id="wA8-1s-eNp" customClass="GasMileageViewController" customModule="CarKeeper1_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Rbh-0x-f9f"/>
-                        <viewControllerLayoutGuide type="bottom" id="l4p-br-kMv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jDJ-4J-QFS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3da-i0-Knu">
-                                <rect key="frame" x="298" y="169" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="ChangeName:" destination="wA8-1s-eNp" eventType="touchUpInside" id="bjk-oi-gTf"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Gas Mileage" id="dIQ-pU-Lqb">
-                        <barButtonItem key="leftBarButtonItem" title="Garage" id="esc-nj-lfe">
-                            <connections>
-                                <segue destination="rl0-ga-Erb" kind="modal" id="7mp-GF-cEn"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="uSG-dY-sgj"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hMe-Bw-Bv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6116" y="450"/>
-        </scene>
         <!--Records-->
         <scene sceneID="zaJ-Hi-bEA">
             <objects>
                 <tableViewController id="ZjR-ft-LOg" customClass="RecordsTableViewController" customModule="CarKeeper1_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="R16-LS-LiX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="R16-LS-LiX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="3xk-MM-zjh">
+                            <rect key="frame" x="0.0" y="157" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="QwQ-Ky-UvN"/>
+                                <barButtonItem title="Back To Garage" id="apc-BM-Axu">
+                                    <connections>
+                                        <segue destination="rl0-ga-Erb" kind="modal" id="nRT-DP-Bpa"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="yvy-Fa-7By"/>
+                            </items>
+                        </toolbar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recordCell" id="vbi-JN-Bf6">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordsTableViewCell" rowHeight="65" id="vbi-JN-Bf6" customClass="RecordsTableViewCell" customModule="CarKeeper1_0" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vbi-JN-Bf6" id="E3V-zb-Jqh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9o4-qE-Ezv">
+                                            <rect key="frame" x="8" y="8" width="109" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pC-76-s9h">
+                                            <rect key="frame" x="182" y="8" width="99" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWY-AQ-pWY">
+                                            <rect key="frame" x="8" y="35" width="109" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dateLabel" destination="zWY-AQ-pWY" id="gxl-hD-eKH"/>
+                                    <outlet property="priceLabel" destination="6pC-76-s9h" id="cgN-Tl-jsb"/>
+                                    <outlet property="taskNameLabel" destination="9o4-qE-Ezv" id="0aN-2T-9ZG"/>
                                     <segue destination="hA0-7P-1uv" kind="show" identifier="show" id="zdC-vy-pKQ"/>
                                 </connections>
                             </tableViewCell>
@@ -566,11 +574,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Records" id="UK1-Tb-sK2">
-                        <barButtonItem key="leftBarButtonItem" title="Garage" id="t4d-gK-lBx">
-                            <connections>
-                                <segue destination="rl0-ga-Erb" kind="modal" id="Its-iZ-bjB"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sNF-2B-rte">
                             <connections>
                                 <segue destination="txK-Mz-ryy" kind="presentation" identifier="doneSegue" id="0rm-L9-jA6"/>
@@ -580,7 +583,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJO-PD-g9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3596" y="-358"/>
+            <point key="canvasLocation" x="3598" y="-352"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="whM-PL-Iqa">
@@ -722,6 +725,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="FD5-LZ-pcT">
+                            <rect key="frame" x="0.0" y="157" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="2ka-gd-GOW"/>
+                                <barButtonItem title="Back To Garage" id="M9N-Vl-jUW">
+                                    <connections>
+                                        <segue destination="rl0-ga-Erb" kind="modal" id="ny1-fa-iRr"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="QcD-WE-GzG"/>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FillupTableViewCell" rowHeight="65" id="Hc5-rO-Yy5" customClass="FillupTableViewCell" customModule="CarKeeper1_0" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="65"/>
@@ -778,11 +794,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Gas Fillups" id="jfZ-yP-y1x">
-                        <barButtonItem key="leftBarButtonItem" title="Garage" id="Spo-CD-Jur">
-                            <connections>
-                                <segue destination="rl0-ga-Erb" kind="modal" id="hnX-Vt-U0P"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="z15-YP-6S3">
                             <connections>
                                 <segue destination="FNq-FV-Ljx" kind="presentation" identifier="addFillup" id="ybB-WL-InU"/>
@@ -965,9 +976,9 @@
         <image name="sedan-512" width="512" height="307"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Its-iZ-bjB"/>
-        <segue reference="8MD-Lh-dam"/>
-        <segue reference="dwq-eA-OTz"/>
+        <segue reference="nRT-DP-Bpa"/>
         <segue reference="zdC-vy-pKQ"/>
+        <segue reference="dwq-eA-OTz"/>
+        <segue reference="8MD-Lh-dam"/>
     </inferredMetricsTieBreakers>
 </document>

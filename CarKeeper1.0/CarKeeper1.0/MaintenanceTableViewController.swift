@@ -14,6 +14,7 @@ class MaintenanceTableViewController: UITableViewController {
     //var newDelete = MyDeleteButton()
     override func viewDidLoad() {
         newReminder = (CarStructObj.CurrentCar?.Reminders)!
+        navigationItem.leftBarButtonItem = editButtonItem()
         super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
@@ -68,42 +69,61 @@ class MaintenanceTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        if editingStyle == .Delete{
+            // Delete the row from the car array
+            newReminder.removeAtIndex(indexPath.row)
+            CarStructObj.CurrentCar?.Reminders.removeAtIndex(indexPath.row)
+            //save the cars whenver an instance of the cars is deleted
+            CarStructObj.saveCars()
+            //deletes from the table view
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert{
+            //create a new instance? idk...
+        }
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
     
     /*
-     // Override to support conditional editing of the table view.
-     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
+    // Override to support conditional editing of the table view.
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    // Return false if you do not want the specified item to be editable.
+    return true
+    }
+    */
     
     
     // Override to support editing the table view.
     /*
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if newDelete.deleteButtonSelected == true {
-     // Delete the row from the data source
-     print ("at deletebuttonselected")
-     newReminder.removeAtIndex(indexPath.row)
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     }
-     }
-     */
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if newDelete.deleteButtonSelected == true {
+    // Delete the row from the data source
+    print ("at deletebuttonselected")
+    newReminder.removeAtIndex(indexPath.row)
+    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    }
+    }
+    */
     
     /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
+    // Override to support rearranging the table view.
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+    
+    }
+    */
     
     /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
+    // Override to support conditional rearranging of the table view.
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    // Return false if you do not want the item to be re-orderable.
+    return true
+    }
+    */
     
     
     // MARK: - Navigation
