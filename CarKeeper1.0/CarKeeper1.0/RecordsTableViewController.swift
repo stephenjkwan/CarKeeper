@@ -87,6 +87,7 @@ class RecordsTableViewController: UITableViewController {
         cell.taskNameLabel.text = tmp.recordName
         cell.priceLabel.text = tmp.price
         cell.dateLabel.text = tmp.recordDate
+        cell.dollasign.text = "$"
         return cell
     }
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){

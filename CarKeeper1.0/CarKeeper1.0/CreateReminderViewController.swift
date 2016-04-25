@@ -122,6 +122,17 @@ class CreateReminderViewController: UIViewController, UITextFieldDelegate, UINav
     }
     /**** Ened of editing text field for dates **/
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    
+    
     // Override to support editing the table view.
     
     

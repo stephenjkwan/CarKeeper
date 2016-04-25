@@ -11,10 +11,11 @@ import UIKit
 class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
     
     
+    @IBOutlet weak var mpglabel: UILabel!
     @IBOutlet weak var CostTexField: UITextField!
     @IBOutlet weak var MilesDrivenTextField: UITextField!
     @IBOutlet weak var FuelTankTextField: UITextField!
-    @IBOutlet weak var MPGTextField: UITextField!
+    //@IBOutlet weak var MPGTextField: UITextField!
     @IBOutlet weak var DateTextField: UITextField!
     @IBOutlet weak var SaveButton: UIBarButtonItem!
     let datePickView : UIDatePicker = UIDatePicker()
@@ -28,7 +29,7 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
         CostTexField.delegate = self
         MilesDrivenTextField.delegate = self
         FuelTankTextField.delegate = self
-        MPGTextField.delegate = self
+       //MPGTextField.delegate = self
         DateTextField.delegate = self
         
         if let fillups = fillups{
@@ -36,7 +37,7 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
             CostTexField.text = fillups.totalCost as String
             MilesDrivenTextField.text = String(fillups.milesdriven)
             FuelTankTextField.text = String(fillups.FuelTank)
-            MPGTextField.text =  String(fillups.MPG)
+            mpglabel.text =  String(fillups.MPG)
             DateTextField.text = fillups.gDate
             
             
@@ -121,7 +122,14 @@ class AddGasFillupViewController: UIViewController,UITextFieldDelegate {
         dateHandler.timeStyle = NSDateFormatterStyle.NoStyle
         DateTextField.text = dateHandler.stringFromDate(sender.date)
     }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+    }
     
     
     

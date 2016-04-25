@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rl0-ga-Erb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rl0-ga-Erb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -384,7 +384,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="crD-jr-iA0" id="eMD-7z-DIk">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ferrari.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jkW-Pz-Ikv">
@@ -506,7 +506,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1af-18-jRa" id="f2t-s0-jH3">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOa-r8-YMi">
@@ -611,17 +611,11 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vbi-JN-Bf6" id="E3V-zb-Jqh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9o4-qE-Ezv">
-                                            <rect key="frame" x="8" y="8" width="109" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pC-76-s9h">
-                                            <rect key="frame" x="182" y="8" width="99" height="21"/>
+                                            <rect key="frame" x="8" y="8" width="199" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -632,10 +626,23 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMX-d4-PGI">
+                                            <rect key="frame" x="230" y="7" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pC-76-s9h">
+                                            <rect key="frame" x="243" y="7" width="99" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="zWY-AQ-pWY" id="gxl-hD-eKH"/>
+                                    <outlet property="dollasign" destination="CMX-d4-PGI" id="QhJ-8E-xpR"/>
                                     <outlet property="priceLabel" destination="6pC-76-s9h" id="cgN-Tl-jsb"/>
                                     <outlet property="taskNameLabel" destination="9o4-qE-Ezv" id="0aN-2T-9ZG"/>
                                     <segue destination="hA0-7P-1uv" kind="show" identifier="show" id="zdC-vy-pKQ"/>
@@ -696,6 +703,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="editDateTextField:" destination="8Gq-mR-bZg" eventType="editingDidBegin" id="LDh-y0-TUn"/>
+                                    <outlet property="delegate" destination="8Gq-mR-bZg" id="Y9W-Lk-34d"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nU-Os-krP">
@@ -715,7 +723,10 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note To Self" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lcY-Ol-iTk">
                                 <rect key="frame" x="0.0" y="271" width="600" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8Gq-mR-bZg" id="DmB-m2-Rxh"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Reminder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqS-mR-NlU">
                                 <rect key="frame" x="0.0" y="72" width="600" height="33"/>
@@ -727,7 +738,10 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reminder" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Qj-o0-FfD">
                                 <rect key="frame" x="183" y="113" width="234" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8Gq-mR-bZg" id="FPE-ec-wUg"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -772,11 +786,11 @@
             </objects>
             <point key="canvasLocation" x="4241" y="-1415"/>
         </scene>
-        <!--Gas Mileage-->
+        <!--Gas Fillups-->
         <scene sceneID="40E-Hp-YSD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Udv-kP-Pbw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Gas Mileage" image="gas_station" id="uOT-fL-ZRJ"/>
+                    <tabBarItem key="tabBarItem" title="Gas Fillups" image="gas_station" id="uOT-fL-ZRJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rei-uy-ZdF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -817,7 +831,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hc5-rO-Yy5" id="0wz-iY-o9A">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFd-Kp-man">
@@ -898,11 +912,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Spent on " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jpw-ar-86X">
-                                <rect key="frame" x="183" y="113" width="234" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Miles driven" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6F-ut-AmE">
                                 <rect key="frame" x="0.0" y="151" width="600" height="33"/>
                                 <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -913,7 +922,10 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Miles Driven" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UHR-Nn-ygg">
                                 <rect key="frame" x="183" y="192" width="234" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZaB-PB-b0a" id="GPk-Wv-k7f"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Fuel Tank Capacity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8M-qZ-yCC">
                                 <rect key="frame" x="0.0" y="230" width="600" height="33"/>
@@ -925,20 +937,18 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fuel Tank Capacity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hq4-kU-vjP">
                                 <rect key="frame" x="183" y="271" width="234" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZaB-PB-b0a" id="RNf-v0-cjm"/>
+                                </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="MPG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vL-rN-GER">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Calculated MPG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vL-rN-GER">
                                 <rect key="frame" x="0.0" y="309" width="600" height="33"/>
                                 <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Miles Per Gallon" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3mg-MQ-xfi">
-                                <rect key="frame" x="183" y="350" width="234" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Oq-a4-gWH">
                                 <rect key="frame" x="0.0" y="388" width="600" height="33"/>
                                 <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -952,6 +962,21 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="EditDateTextField:" destination="ZaB-PB-b0a" eventType="editingDidBegin" id="sXm-pD-MSd"/>
+                                    <outlet property="delegate" destination="ZaB-PB-b0a" id="VDg-MN-Zjq"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwv-lD-0k6">
+                                <rect key="frame" x="183" y="350" width="234" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cost" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jpw-ar-86X">
+                                <rect key="frame" x="183" y="113" width="234" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZaB-PB-b0a" id="Dmq-Kd-gWG"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -961,7 +986,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="F7Q-UP-ryO" secondAttribute="trailing" constant="-20" id="Hhv-uc-LNu"/>
                             <constraint firstItem="I6F-ut-AmE" firstAttribute="leading" secondItem="5IJ-e7-kh5" secondAttribute="leadingMargin" constant="-20" id="M6V-tX-4dw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6vL-rN-GER" secondAttribute="trailing" constant="-20" id="O3B-aU-VRn"/>
-                            <constraint firstItem="3mg-MQ-xfi" firstAttribute="centerX" secondItem="5IJ-e7-kh5" secondAttribute="centerX" id="Ozc-oi-3cI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0Oq-a4-gWH" secondAttribute="trailing" constant="-20" id="UGW-tH-IEn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="m8M-qZ-yCC" secondAttribute="trailing" constant="-20" id="UjP-R9-D1c"/>
                             <constraint firstItem="F7Q-UP-ryO" firstAttribute="centerX" secondItem="5IJ-e7-kh5" secondAttribute="centerX" id="VEn-G1-U0T"/>
@@ -973,6 +997,7 @@
                             <constraint firstItem="m8M-qZ-yCC" firstAttribute="centerX" secondItem="5IJ-e7-kh5" secondAttribute="centerX" id="lOn-IN-Lex"/>
                             <constraint firstItem="0Oq-a4-gWH" firstAttribute="leading" secondItem="5IJ-e7-kh5" secondAttribute="leadingMargin" constant="-20" id="oQ7-2V-hYP"/>
                             <constraint firstItem="6vL-rN-GER" firstAttribute="centerX" secondItem="5IJ-e7-kh5" secondAttribute="centerX" id="vzD-ex-Ecu"/>
+                            <constraint firstItem="xwv-lD-0k6" firstAttribute="centerX" secondItem="5IJ-e7-kh5" secondAttribute="centerX" id="wKV-5P-xwS"/>
                             <constraint firstItem="0Oq-a4-gWH" firstAttribute="centerX" secondItem="5IJ-e7-kh5" secondAttribute="centerX" id="wq8-RV-Ucy"/>
                             <constraint firstItem="b7F-51-wgY" firstAttribute="centerX" secondItem="5IJ-e7-kh5" secondAttribute="centerX" id="yMr-pS-kI3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="I6F-ut-AmE" secondAttribute="trailing" constant="-20" id="yc4-Wy-i6n"/>
@@ -995,9 +1020,9 @@
                         <outlet property="CostTexField" destination="Jpw-ar-86X" id="DYQ-0s-5BQ"/>
                         <outlet property="DateTextField" destination="b7F-51-wgY" id="q5b-O5-tX5"/>
                         <outlet property="FuelTankTextField" destination="hq4-kU-vjP" id="EXw-5C-cEW"/>
-                        <outlet property="MPGTextField" destination="3mg-MQ-xfi" id="23i-Ds-XrR"/>
                         <outlet property="MilesDrivenTextField" destination="UHR-Nn-ygg" id="Pp7-R8-lW3"/>
                         <outlet property="SaveButton" destination="mbg-wa-QUu" id="Ziw-1v-TFg"/>
+                        <outlet property="mpglabel" destination="xwv-lD-0k6" id="LuA-ED-3uT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sls-pY-OpF" userLabel="First Responder" sceneMemberID="firstResponder"/>

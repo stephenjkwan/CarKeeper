@@ -12,6 +12,7 @@ class RecordsTableViewCell: UITableViewCell {
     @IBOutlet weak var taskNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dollasign: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
