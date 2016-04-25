@@ -11,6 +11,23 @@ import UIKit
 class AddRecordsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     var myRecords: MyRecords?
 
+    @IBOutlet weak var myPic: UIImageView!
+    @IBOutlet weak var addPic: UIButton!
+    
+    @IBAction func addPicAction(sender: UIButton) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .Camera
+        
+        presentViewController(picker, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        myPic.image = info[UIImagePickerControllerOriginalImage] as? UIImage;
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBOutlet weak var dateOut: UITextField!
     
     @IBOutlet weak var odoOut: UITextField!
@@ -89,6 +106,7 @@ class AddRecordsViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.myPic.userInteractionEnabled = true
         taskOut.delegate = self
         dateOut.delegate = self
         priceOut.delegate = self
@@ -112,7 +130,16 @@ class AddRecordsViewController: UIViewController, UIImagePickerControllerDelegat
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
 
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+    }
+
+    
     /*
     // MARK: - Navigation
 

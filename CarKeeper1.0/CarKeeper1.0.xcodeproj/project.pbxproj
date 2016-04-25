@@ -20,6 +20,7 @@
 		35A43F2D1CC70C9A00711811 /* AddRecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A43F2C1CC70C9A00711811 /* AddRecordsViewController.swift */; };
 		35A43F2F1CC70DF700711811 /* RecordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A43F2E1CC70DF700711811 /* RecordsTableViewController.swift */; };
 		35A43F311CCD5A3800711811 /* MyRecords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A43F301CCD5A3800711811 /* MyRecords.swift */; };
+		35A43F371CCDA15400711811 /* SLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A43F361CCDA15400711811 /* SLImageView.swift */; };
 		AE234A931CC2DEA500C21BC7 /* GasFillup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE234A921CC2DEA500C21BC7 /* GasFillup.swift */; };
 		AE234A951CC2E31800C21BC7 /* AddGasFillupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE234A941CC2E31800C21BC7 /* AddGasFillupViewController.swift */; };
 		AE73B5491CC5E95B008D91B9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE73B5481CC5E95B008D91B9 /* TabBarController.swift */; };
@@ -76,6 +77,7 @@
 		35A43F2C1CC70C9A00711811 /* AddRecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddRecordsViewController.swift; path = ../AddRecordsViewController.swift; sourceTree = "<group>"; };
 		35A43F2E1CC70DF700711811 /* RecordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsTableViewController.swift; sourceTree = "<group>"; };
 		35A43F301CCD5A3800711811 /* MyRecords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRecords.swift; sourceTree = "<group>"; };
+		35A43F361CCDA15400711811 /* SLImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLImageView.swift; sourceTree = "<group>"; };
 		AE234A921CC2DEA500C21BC7 /* GasFillup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasFillup.swift; sourceTree = "<group>"; };
 		AE234A941CC2E31800C21BC7 /* AddGasFillupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGasFillupViewController.swift; sourceTree = "<group>"; };
 		AE73B5481CC5E95B008D91B9 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				AEA8F3D71C822E6500C16E70 /* Info.plist */,
 				AEA8F3D41C822E6500C16E70 /* LaunchScreen.storyboard */,
 				AEA8F3CF1C822E6500C16E70 /* Main.storyboard */,
+				35A43F361CCDA15400711811 /* SLImageView.swift */,
 				2268CB1D1CC435270018405F /* MaintenanceReminders */,
 				22D655C21C9D1DD200F06E00 /* MyCars.swift */,
 				AE73B5481CC5E95B008D91B9 /* TabBarController.swift */,
@@ -287,7 +290,7 @@
 				TargetAttributes = {
 					AEA8F3C51C822E6500C16E70 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 9WLS8BHRH5;
+						DevelopmentTeam = 8L9FTLC46M;
 					};
 					AEA8F3DB1C822E6500C16E70 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -357,6 +360,7 @@
 				AE95CC3B1CC875410007A447 /* FillupTableViewCell.swift in Sources */,
 				228A975D1CCA70570025AA6C /* FillupTableViewController.swift in Sources */,
 				35A43F2F1CC70DF700711811 /* RecordsTableViewController.swift in Sources */,
+				35A43F371CCDA15400711811 /* SLImageView.swift in Sources */,
 				22D655BD1C9D193D00F06E00 /* CarTableViewCell.swift in Sources */,
 				35A43F2D1CC70C9A00711811 /* AddRecordsViewController.swift in Sources */,
 				22B8B7471CBEF65900B037C3 /* MyReminders.swift in Sources */,
@@ -513,7 +517,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CarKeeper1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Alto.CarKeeper1-0";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alto.MyCarKeeper1-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -528,7 +532,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CarKeeper1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Alto.CarKeeper1-0";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alto.MyCarKeeper1-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

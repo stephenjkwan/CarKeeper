@@ -43,6 +43,7 @@ class RecordsTableViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
+        newRecords = (CarStructObj.CurrentCar?.Records)!
         navigationItem.leftBarButtonItem = editButtonItem()
         for record in (CarStructObj.CurrentCar?.Records)!{
             print(record.recordName)
