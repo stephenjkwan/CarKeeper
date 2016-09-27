@@ -284,13 +284,16 @@
 		AEA8F3BE1C822E6500C16E70 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Alto;
 				TargetAttributes = {
 					AEA8F3C51C822E6500C16E70 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 8L9FTLC46M;
+						DevelopmentTeam = XT523PH23E;
 					};
 					AEA8F3DB1C822E6500C16E70 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -517,7 +520,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CarKeeper1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Alto.MyCarKeeper1-0";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alto.YourCarKeeper1-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -532,7 +535,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CarKeeper1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Alto.MyCarKeeper1-0";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alto.YourCarKeeper1-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

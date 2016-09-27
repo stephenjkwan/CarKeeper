@@ -2,7 +2,7 @@
 //  MyCars.swift
 //  CarKeeper1.0
 //
-//  Created by Justin Nguyen on 3/19/16.
+//  Created by Stephen Kwan on 3/19/16.
 //  Copyright © 2016 Alto. All rights reserved.
 //
 

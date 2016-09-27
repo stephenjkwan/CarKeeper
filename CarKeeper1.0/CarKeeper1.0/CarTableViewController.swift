@@ -95,7 +95,6 @@ class CarTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if editingStyle == .Delete{
             // Delete the row from the car array
-            //carArray.removeAtIndex(indexPath.row)
             CarStructObj.Cars.removeAtIndex(indexPath.row)
             
             //save the cars whenver an instance of the cars is deleted
@@ -103,7 +102,7 @@ class CarTableViewController: UITableViewController {
             //deletes from the table view
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert{
-            //create a new instance? idk...
+            
         }
     }
     
@@ -150,9 +149,5 @@ class CarTableViewController: UITableViewController {
             CarStructObj.CurrentCar = selectedCar
         }
     }
-    
-    //MARK NSCODING
-    //function to archive car array to a specific location. isSuccessfulSave retruns true if it saved successfully
-    //function loads cars from the archive we previously stored the car array to our carArray
-    
+        
 }
